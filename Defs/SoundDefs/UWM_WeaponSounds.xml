@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>fartSound</defName>  
+    <context>MapOnly</context> 
+    <eventNames />  
+    <maxSimultaneous>9</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>fartsound</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>239.91304</min>        
+          <max>239.91304</max>
+        </volumeRange>      
+        <pitchRange>
+          <min>0.9576087</min>        
+          <max>1.084783</max>
+        </pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>healthSound</defName>  
+    <context>MapOnly</context> 
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>healthsound</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>25</min>        
+          <max>25</max>
+        </volumeRange>      
+        <pitchRange>
+          <min>0.9788043</min>        
+          <max>1.084783</max>
+        </pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

@@ -1,0 +1,3 @@
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\UltimateWeaponsMod\Assemblies\UltimateWeaponsMod.dll
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\UltimateWeaponsMod\Source\UltimateWeaponsMod\UltimateWeaponsMod\obj\Debug\UltimateWeaponsMod.dll
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\UltimateWeaponsMod\Source\UltimateWeaponsMod\UltimateWeaponsMod\obj\Debug\UltimateWeaponsMod.csprojResolveAssemblyReference.cache

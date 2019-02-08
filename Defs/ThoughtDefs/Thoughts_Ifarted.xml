@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThoughtDef>
+    <defName>ifarted</defName>
+    <durationDays>0.25</durationDays>
+    <stages>
+      <li>
+        <label>Oops! I just farted!</label>
+        <description>I just let out a really loud fart! I hope no one heard it.. It smells REALLY bad.. </description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
