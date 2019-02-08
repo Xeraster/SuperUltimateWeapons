@@ -694,6 +694,93 @@
     </comps>
   </ThingDef>
 
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>UW_EverythingLauncher</defName>
+    <label>Everything Launcher</label>
+    <description>This gun shoots everything.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/everythingLauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>7</Mass>
+      <WorkToMake>4000</WorkToMake>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.55</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>125</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <Plasteel>15</Plasteel>
+    </costList>
+    <weaponTags>
+      <li>Gun</li>
+      <li>GunHeavy</li>
+    </weaponTags>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_EverythingRocket</defaultProjectile>
+        <warmupTime>0.2</warmupTime>
+        <range>45.9</range>
+        <soundCast>Shot_Revolver</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3.1</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_EverythingRocket</defName>
+    <label>large bottle</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/animalRocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <explosionRadius>2.9</explosionRadius>
+      <speed>50</speed>
+    </projectile>
+    <thingClass>UltimateWeaponsMod.Projectile_EverythingRocket</thingClass>
+  </ThingDef>
+
 <ThingDef ParentName="BaseBullet">
     <defName>Bullet_BeerRocket</defName>
     <label>large bottle</label>

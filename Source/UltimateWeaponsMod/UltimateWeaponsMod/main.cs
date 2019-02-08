@@ -54,4 +54,12 @@ namespace UltimateWeaponsMod
         public int speed = 50;
     }
 
+    public class Thingdef_EverythingRocket : ThingDef
+    {
+        public string damageDef = "Bomb";
+        public int damageAmountBase = 15;
+        public float explosionRadius = 2.9f;
+        public int speed = 50;
+    }
+
 }
