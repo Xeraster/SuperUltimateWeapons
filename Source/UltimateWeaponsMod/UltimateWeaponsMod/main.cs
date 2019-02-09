@@ -18,6 +18,11 @@ namespace UltimateWeaponsMod
         public HediffDef HediffToAdd = HediffDefOf.Plague;
     }
 
+    public class Thingdef_RaidBullet : ThingDef
+    {
+        public float raidSeverityMultiplier = 1.00f; //base multiplier to be applied when calculating a random.
+    }
+
     public class Thingdef_MentalHealthBullet : ThingDef
     {
         public float AddHediffChance = 0.95f; //The default chance of adding a hediff.
