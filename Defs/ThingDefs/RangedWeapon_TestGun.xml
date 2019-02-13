@@ -216,6 +216,72 @@
   </ThingDef>
 
   <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Gun_houseGun</defName>
+    <label>House Gun</label>
+    <description>Need a house? This gun spawns random buildings for you.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/houseGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <weaponTags>
+      <li>SimpleGun</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.2</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.30</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>130</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>UW_Bullet_HouseBullet</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>31.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <burstShotCount>1</burstShotCount>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_CatGun</defName>
     <label>Cat Gun</label>
     <description>A gun that turns whatever it hits into a bunch of cats.</description>
@@ -1034,9 +1100,26 @@
       <damageAmountBase>0</damageAmountBase>
       <speed>55</speed>
     </projectile>
-    <AddHediffChance>0.95</AddHediffChance>
-  <HediffToAdd>Plague</HediffToAdd>
+  <raidSeverityMultiplier>1.0</raidSeverityMultiplier>
   <thingClass>UltimateWeaponsMod.Projectile_RaidBullet</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="UltimateWeaponsMod.Thingdef_HouseBullet" ParentName="BaseBullet">
+    <defName>UW_Bullet_HouseBullet</defName>
+    <label>Subsonic House</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+    <AddHediffChance>0.95</AddHediffChance>
+  <buildingWealthMultiplier>1.0</buildingWealthMultiplier>
+  <thingClass>UltimateWeaponsMod.Projectile_HouseBullet</thingClass>
   </ThingDef>
 
   <ThingDef Class="UltimateWeaponsMod.Thingdef_MentalHealthBullet" ParentName="BaseBullet">

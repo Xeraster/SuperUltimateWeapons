@@ -23,6 +23,11 @@ namespace UltimateWeaponsMod
         public float raidSeverityMultiplier = 1.00f; //base multiplier to be applied when calculating a random.
     }
 
+    public class Thingdef_HouseBullet : ThingDef
+    {
+        public float buildingWealthMultiplier = 1.00f; //base multiplier to be applied when calculating a random.
+    }
+
     public class Thingdef_MentalHealthBullet : ThingDef
     {
         public float AddHediffChance = 0.95f; //The default chance of adding a hediff.
