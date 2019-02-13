@@ -429,7 +429,7 @@
       </skillRequirements>
     </recipeMaker>
     <statBases>
-      <MarketValue>1000</MarketValue>
+      <MarketValue>10000</MarketValue>
       <Mass>7</Mass>
       <WorkToMake>4000</WorkToMake>
       <AccuracyTouch>0.90</AccuracyTouch>
@@ -500,7 +500,7 @@
       </skillRequirements>
     </recipeMaker>
     <statBases>
-      <MarketValue>1000</MarketValue>
+      <MarketValue>5000</MarketValue>
       <Mass>7</Mass>
       <WorkToMake>4000</WorkToMake>
       <AccuracyTouch>0.90</AccuracyTouch>
