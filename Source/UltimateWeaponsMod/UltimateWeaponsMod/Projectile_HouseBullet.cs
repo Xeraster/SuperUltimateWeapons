@@ -38,31 +38,32 @@ namespace UltimateWeaponsMod
             //Log.Message("line 1", true);
             int randomNumber = rand111.Next(50, 1000);
             randomNumber = (int)Math.Round((randomNumber * 1.0f));
-            //Log.Message("points = " + randomNumber, true);
-            IncidentParms ind222 = new IncidentParms();
-            //Log.Message("line 2", true);
-            ind222.points = randomNumber;
-            ind222.raidArrivalMode = PawnsArrivalModeDefOf.EdgeWalkIn;
-            //Log.Message("line 3", true);
-            ind222.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
-            //Log.Message("line 4", true);
-            ind222.faction = Find.FactionManager.RandomEnemyFaction();
-            ind222.pawnGroupMakerSeed = 122;
-            //Log.Message("line 5", true);
-            ind222.target = hitThing.Map;
-            //Log.Message("this map to string = " + hitThing.Map.ToString(), true);
-            //Log.Message("line 6", true);
-            //IncidentDef indicent1 = IncidentDefOf.RaidEnemy;
-            //Log.Message("line 7", true);
-            //ind222.ExposeData();
-            ind222.forced = true;
-            IncidentDef indicent1 = (!ind222.faction.HostileTo(Faction.OfPlayer)) ? IncidentDefOf.RaidFriendly : IncidentDefOf.RaidEnemy;
-            indicent1.baseChance = 1.0f;
-            indicent1.Worker.TryExecute(ind222);
-            //Log.Message("done", true);
-            //well that was a pain in the ass.
+            //Log.Message("points = " + randomNumber, tru
             //}
+            int hitPosX;
+            int hitPosY;
+            if (hitThing != null)
+            {
+                hitPosX = hitThing.Position.x;
+                hitPosY = hitThing.Position.y;
+            }
+            else if (this.launcher.Map != null)
+            {
+                hitPosX = this.Position.x;
+                hitPosY = this.Position.y;
+            }
+            ThingDef thingToSpawn;
+            thingToSpawn = ThingDefOf.Wall;
+            //Thing theThingToSpawn = ThingMaker.MakeThing(thingToSpawn);
+            //Thing theThingToSpawn = new Thing();
+            //theThingToSpawn.SetStuffDirect(ThingDefOf.Steel);
+            Thing theThingToSpawn = ThingMaker.MakeThing(thingToSpawn, ThingDefOf.Steel);
+            //theThingToSpawn.SetStuffDirect(ThingDefOf.Steel);
+            Log.Message("stuff = " + theThingToSpawn.Stuff.ToString(), true);
+            //gotta figure out how to designate this wall a material or else the Rimworld error log will have a field day
+            IntVec3 positionWhatever = new IntVec3(this.Position.x, this.Position.y, this.Position.z);
+            GenSpawn.Spawn(theThingToSpawn, positionWhatever, this.launcher.Map);
+            #endregion Overrides
         }
-        #endregion Overrides
     }
 }

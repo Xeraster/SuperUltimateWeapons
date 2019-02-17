@@ -3,7 +3,9 @@
     <Files>
       <File FileName="UltimateWeaponsMod/main.cs" Line="28" Column="59" />
       <File FileName="UltimateWeaponsMod/Projectile_RaidBullet.cs" Line="69" Column="1" />
-      <File FileName="UltimateWeaponsMod/Projectile_HouseBullet.cs" Line="38" Column="43" />
+      <File FileName="UltimateWeaponsMod/Projectile_HouseBullet.cs" Line="56" Column="15" />
+      <File FileName="UltimateWeaponsMod/Projectile_WeedRocket.cs" Line="67" Column="122" />
+      <File FileName="UltimateWeaponsMod/Projectile_CatBullet.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
