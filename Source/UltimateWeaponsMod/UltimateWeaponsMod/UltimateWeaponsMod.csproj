@@ -62,6 +62,7 @@
     <Compile Include="Projectile_EverythingRocket.cs" />
     <Compile Include="Projectile_HouseBullet.cs" />
     <Compile Include="BuildingSpawner.cs" />
+    <Compile Include="Projectile_SuperNukeBullet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

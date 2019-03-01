@@ -619,6 +619,75 @@
   </ThingDef>
 
   <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>UW_superNukeLauncher</defName>
+    <label>Super Nuke Launcher</label>
+    <description>The Super Nuke</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/superNukeLauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <MarketValue>50000</MarketValue>
+      <Mass>7</Mass>
+      <WorkToMake>6000</WorkToMake>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>375</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <Plasteel>45</Plasteel>
+    </costList>
+    <weaponTags>
+      <li>Gun</li>
+      <li>GunHeavy</li>
+    </weaponTags>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>UW_Bullet_SuperNukeBullet</defaultProjectile>
+        <warmupTime>0.2</warmupTime>
+        <range>45.9</range>
+        <soundCast>Shot_Revolver</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>13.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_MassiveRocketLauncher</defName>
     <label>Massive Rocket Launcher</label>
     <description>A reloadable rocket launcher that causes massive amounts of damage. With great explosives comes great responsibility. Or something.</description>
@@ -1102,6 +1171,23 @@
     </projectile>
   <raidSeverityMultiplier>1.0</raidSeverityMultiplier>
   <thingClass>UltimateWeaponsMod.Projectile_RaidBullet</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="UltimateWeaponsMod.Thingdef_SuperNukeBullet" ParentName="BaseBullet">
+    <defName>UW_Bullet_SuperNukeBullet</defName>
+    <label>Super Nuke</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/superNukeRocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+  <raidSeverityMultiplier>1.0</raidSeverityMultiplier>
+  <thingClass>UltimateWeaponsMod.Projectile_SuperNukeBullet</thingClass>
   </ThingDef>
 
   <ThingDef Class="UltimateWeaponsMod.Thingdef_HouseBullet" ParentName="BaseBullet">

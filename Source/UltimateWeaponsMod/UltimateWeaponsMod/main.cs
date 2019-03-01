@@ -72,4 +72,9 @@ namespace UltimateWeaponsMod
         public int speed = 50;
     }
 
+    public class Thingdef_SuperNukeBullet : ThingDef
+    {
+
+    }
+
 }
