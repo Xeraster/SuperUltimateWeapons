@@ -412,6 +412,74 @@
     </tools>
   </ThingDef>
 
+   <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>UW_Gun_SafetyGun</defName>
+    <label>The Safety Gun</label>
+    <description>A gun that heals friendlies but kills enemies.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/safetyGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <statBases>
+      <WorkToMake>400</WorkToMake>
+      <Mass>1.4</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>SimpleGun</li>
+    </weaponTags>
+    <costList>
+      <Steel>180</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <Plasteel>2</Plasteel>
+      <Silver>4</Silver>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>UW_Bullet_SafetyGun</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>25.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_MentalHealthGun</defName>
     <label>The Mental Health Gun</label>
@@ -1154,6 +1222,25 @@
     <AddHediffChance>0.95</AddHediffChance>
 	<HediffToAdd>Plague</HediffToAdd>
 	<thingClass>UltimateWeaponsMod.Projectile_HealthBullet</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="UltimateWeaponsMod.Thingdef_SafetyBullet" ParentName="BaseBullet">
+    <defName>UW_Bullet_SafetyGun</defName>
+    <label>Projectile from Safety Gun</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+    <OP_ness>0.95</OP_ness>
+  <HealDegree>1</HealDegree>
+  <damageToDeal>10.0</damageToDeal>
+  <thingClass>UltimateWeaponsMod.Projectile_SafetyBullet</thingClass>
   </ThingDef>
 
   <ThingDef Class="UltimateWeaponsMod.Thingdef_RaidBullet" ParentName="BaseBullet">

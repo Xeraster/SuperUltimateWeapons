@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThoughtDef>
+    <defName>mischappypoopyeahpickle</defName>
+    <durationDays>1.25</durationDays>
+    <stages>
+      <li>
+        <label>Everything is awesome</label>
+        <description>I.. feel happier all of a sudden.. Huh. This is nice.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

@@ -18,6 +18,13 @@ namespace UltimateWeaponsMod
         public HediffDef HediffToAdd = HediffDefOf.Plague;
     }
 
+    public class Thingdef_SafetyBullet : ThingDef
+    {
+        public float OP_ness = 0.95f; //The degree of how op this is
+        public int HealDegree = 1;//description pending
+        public float damageToDeal = 10.0f;
+    }
+
     public class Thingdef_RaidBullet : ThingDef
     {
         public float raidSeverityMultiplier = 1.00f; //base multiplier to be applied when calculating a random.

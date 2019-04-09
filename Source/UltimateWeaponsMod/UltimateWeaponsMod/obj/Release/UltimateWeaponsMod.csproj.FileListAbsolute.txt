@@ -1,0 +1,6 @@
+/home/scott/.local/share/Steam/steamapps/common/RimWorld/Mods/UltimateWeaponsMod/Source/UltimateWeaponsMod/UltimateWeaponsMod/bin/Release/UltimateWeaponsMod.dll
+/home/scott/.local/share/Steam/steamapps/common/RimWorld/Mods/UltimateWeaponsMod/Source/UltimateWeaponsMod/UltimateWeaponsMod/bin/Release/UltimateWeaponsMod.pdb
+/home/scott/.local/share/Steam/steamapps/common/RimWorld/Mods/UltimateWeaponsMod/Assemblies/UltimateWeaponsMod.dll
+/home/scott/.local/share/Steam/steamapps/common/RimWorld/Mods/UltimateWeaponsMod/Source/UltimateWeaponsMod/UltimateWeaponsMod/obj/Release/UltimateWeaponsMod.csproj.CoreCompileInputs.cache
+/home/scott/.local/share/Steam/steamapps/common/RimWorld/Mods/UltimateWeaponsMod/Source/UltimateWeaponsMod/UltimateWeaponsMod/obj/Release/UltimateWeaponsMod.dll
+/home/scott/.local/share/Steam/steamapps/common/RimWorld/Mods/UltimateWeaponsMod/Source/UltimateWeaponsMod/UltimateWeaponsMod/obj/Release/UltimateWeaponsMod.csprojAssemblyReference.cache

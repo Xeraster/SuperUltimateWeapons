@@ -10,7 +10,6 @@ namespace UltimateWeaponsMod
         /// Spawns a building with the given parameters
         /// </summary>
         /// <param name="whichMap">args will be passed when starting this program</param>
-        /// <param name="whichMap">args will be passed when starting this program</param>
         /// <param name="stuff">what will the wall be made out of</param>
         /// <param name="baseLocation">center location of the wall spawning coordinates</param>
         ///  <param name="floorIt">What's the first thing you do before you start the boat?</param>
@@ -67,7 +66,7 @@ namespace UltimateWeaponsMod
                     }
                 }
             }
-
+           
             //spawn furniture if applicable. Do this for ALL room types
             ThingDef heater = ThingDefOf.Heater;
             ThingDef ac = ThingDefOf.Cooler;

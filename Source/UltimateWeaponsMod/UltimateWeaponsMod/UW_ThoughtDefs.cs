@@ -10,6 +10,8 @@ using Verse;
     {
         public static ThoughtDef ifarted;
 
+        public static ThoughtDef mischappypoopyeahpickle;
+
         static UW_ThoughtDefs()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(ThoughtDefOf));
