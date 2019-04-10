@@ -1,18 +1,25 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateWeaponsMod/Projectile_CatSwarm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateWeaponsMod/Projectile_TameBullet.cs">
     <Files>
-      <File FileName="UltimateWeaponsMod/main.cs" Line="55" Column="6" />
-      <File FileName="UltimateWeaponsMod/Projectile_TestBullet.cs" Line="81" Column="24" />
-      <File FileName="UltimateWeaponsMod/Projectile_TrumpRocket.cs" Line="46" Column="1" />
-      <File FileName="UltimateWeaponsMod/Projectile_HouseBullet.cs" Line="67" Column="15" />
-      <File FileName="UltimateWeaponsMod/BuildingSpawner.cs" Line="45" Column="102" />
-      <File FileName="UltimateWeaponsMod/Projectile_MentalHealthBullet.cs" Line="86" Column="1" />
-      <File FileName="UltimateWeaponsMod/Projectile_SkillBullet.cs" Line="176" Column="231" />
-      <File FileName="UltimateWeaponsMod/Projectile_HealthBullet.cs" Line="153" Column="1" />
-      <File FileName="UltimateWeaponsMod/Projectile_SafetyBullet.cs" Line="1" Column="1" />
-      <File FileName="UltimateWeaponsMod/Projectile_CatSwarm.cs" Line="169" Column="1" />
-      <File FileName="UltimateWeaponsMod/Projectile_EverythingRocket.cs" Line="169" Column="1" />
+      <File FileName="UltimateWeaponsMod/main.cs" Line="23" Column="42" />
+      <File FileName="UltimateWeaponsMod/Projectile_CatSwarm.cs" Line="78" Column="13" />
+      <File FileName="UltimateWeaponsMod/Projectile_EverythingRocket.cs" Line="106" Column="88" />
+      <File FileName="UltimateWeaponsMod/Projectile_CatBullet.cs" Line="54" Column="71" />
+      <File FileName="UltimateWeaponsMod/Projectile_SafetyBullet.cs" Line="170" Column="14" />
+      <File FileName="UltimateWeaponsMod/Projectile_TameBullet.cs" Line="62" Column="139" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="UltimateWeaponsMod" expanded="True">
+            <Node name="UltimateWeaponsMod" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="Projectile_TameBullet.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

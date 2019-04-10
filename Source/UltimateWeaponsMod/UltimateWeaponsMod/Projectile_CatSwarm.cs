@@ -103,6 +103,7 @@ namespace UltimateWeaponsMod
                 {
                     IntVec3 positionWhatever = new IntVec3(this.Position.x + i, this.Position.y, this.Position.z + g);
                     Pawn newThing = PawnGenerator.GeneratePawn(DefDatabase<PawnKindDef>.GetNamed("Cat")/*pawnKindDefArray[rInt]*/);
+                    //newThing.SetFaction(Faction.OfPlayer);//this will probably make them tamed cats
                     GenSpawn.Spawn(newThing, positionWhatever, thisMap);
                     //rInt = r.Next(0, pawnsCount - 2);
                 }

@@ -551,6 +551,138 @@
   </ThingDef>
 
   <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>UW_Gun_KillGun</defName>
+    <label>kill gun</label>
+    <description>A gun that unconditionally kills any living thing it hits.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/killGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <statBases>
+      <MarketValue>20000</MarketValue>
+      <WorkToMake>400</WorkToMake>
+      <Mass>1.4</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>Revolver</li>
+    </weaponTags>
+    <costList>
+      <Steel>120</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>1</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>UW_Bullet_KillGun</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>25.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>UW_Gun_TameGun</defName>
+    <label>Tame Gun</label>
+    <description>A gun that unconditionally tames any living thing it hits.
+
+    	Use this to instantly recruit any pawn or instantly tame any animal. It also tames everythig inside of a 3 block radius, so don't go crazy with it!</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/tameGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <statBases>
+      <MarketValue>7500</MarketValue>
+      <WorkToMake>400</WorkToMake>
+      <Mass>1.4</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>Revolver</li>
+    </weaponTags>
+    <costList>
+      <Steel>120</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>1</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>UW_Bullet_TameGun</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>25.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_SafetyPistol</defName>
     <label>The Safety Pistol</label>
     <description>Do you have an idiot pawn that keeps going on mental breaks and shooting the place up? Do you get raided so often you can't afford to not give this same idiot pawn a gun? Well you might be interested in the safety pistol.
@@ -1628,6 +1760,40 @@
     </projectile>
     <DeathChance>0.01</DeathChance>
   <thingClass>UltimateWeaponsMod.Projectile_StunBullet</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="UltimateWeaponsMod.Thingdef_KillBullet" ParentName="BaseBullet">
+    <defName>UW_Bullet_KillGun</defName>
+    <label>Kill Gun</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+    <DeathChance>0.01</DeathChance>
+  <thingClass>UltimateWeaponsMod.Projectile_KillBullet</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="UltimateWeaponsMod.Thingdef_TameBullet" ParentName="BaseBullet">
+    <defName>UW_Bullet_TameGun</defName>
+    <label>Tame Gun</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+    <TameRadius>5</TameRadius>
+  <thingClass>UltimateWeaponsMod.Projectile_TameBullet</thingClass>
   </ThingDef>
 
   <ThingDef Class="UltimateWeaponsMod.Thingdef_SafetyBullet" ParentName="BaseBullet">

@@ -23,6 +23,16 @@ namespace UltimateWeaponsMod
         public float DeathChance = 0.01f;
     }
 
+    public class Thingdef_KillBullet : ThingDef
+    {
+        public float DeathChance = 0.01f;//doesn't actually do anything
+    }
+
+    public class Thingdef_TameBullet : ThingDef
+    {
+        public int TameRadius = 5;//doesn't actually do anything
+    }
+
     public class Thingdef_SafetyBullet : ThingDef
     {
         public float OP_ness = 0.95f; //The degree of how op this is

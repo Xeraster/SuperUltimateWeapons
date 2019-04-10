@@ -30,17 +30,11 @@ namespace UltimateWeaponsMod
              * Make sure your code checks if things actually exist, before they
              * try to use the code that belongs to said things.
              */
+
+            //only do stuff if it is a pawn.
             if (Def != null && hitThing != null && hitThing is Pawn hitPawn) //Fancy way to declare a variable inside an if statement. - Thanks Erdelf.
             {
                 var rand = Rand.Value; // This is a random percentage between 0% and 100%
-                    /*
-                     * Messages.Message flashes a message on the top of the screen. 
-                     * You may be familiar with this one when a colonist dies, because
-                     * it makes a negative sound and mentioneds "So and so has died of _____".
-                     * 
-                     * Here, we're using the "Translate" function. More on that later in
-                     * the localization section.
-                     */
 
                 Map thisMap = hitThing.Map;
                 PawnKindDef pawnKindDef = (from a in thisMap.Biome.AllWildAnimals
@@ -57,6 +51,7 @@ namespace UltimateWeaponsMod
 
                 //Log.Message("pawnKindDef.ToString() = " + pawnKindDef.ToString(), true);
                 Pawn newThing = PawnGenerator.GeneratePawn(pawnKindDef);
+                //newThing.records.AccumulateStoryEvent(StoryEventDef)
                 GenSpawn.Spawn(newThing, hitThing.Position, thisMap);
                 Log.Message("newThing kind def = " + newThing.kindDef.ToString());
                 //hitThing.Map.wildAnimalSpawner.SpawnRandomWildAnimalAt(hitThing.Position);

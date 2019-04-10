@@ -63,6 +63,7 @@ namespace UltimateWeaponsMod
             thingArray[j] = ThingDefOf.Uranium; j++;
             thingArray[j] = ThingDefOf.WoodLog; j++;
             thingArray[j] = ThingDefOf.Wort; j++;
+
             Log.Message("decalred all the items", true);
             /*
              * Null checking is very important in RimWorld.
