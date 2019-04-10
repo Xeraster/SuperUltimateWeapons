@@ -27,17 +27,18 @@ namespace UltimateWeaponsMod
              * Make sure your code checks if things actually exist, before they
              * try to use the code that belongs to said things.
              */
-           // if (Def != null && hitThing != null && hitThing is Pawn hitPawn) //Fancy way to declare a variable inside an if statement. - Thanks Erdelf.
+
+            // if (Def != null && hitThing != null && hitThing is Pawn hitPawn) //Fancy way to declare a variable inside an if statement. - Thanks Erdelf.
             //{
-           var rand = Rand.Value; // This is a random percentage between 0% and 100%
-                //Log.Message("In the Projectile_RaidBullet code body", true);
-                //DebugOutputsIncidents.RaidArrivemodeSampled();
-                //DebugOutputsIncidents.RaidFactionSampled();
-                //DebugOutputsIncidents.RaidStrategySampled();
+            var rand = Rand.Value; // This is a random percentage between 0% and 100%
+                                   //Log.Message("In the Projectile_RaidBullet code body", true);
+                                   //DebugOutputsIncidents.RaidArrivemodeSampled();
+                                   //DebugOutputsIncidents.RaidFactionSampled();
+                                   //DebugOutputsIncidents.RaidStrategySampled();
             Random rand111 = new Random();
             //Log.Message("line 1", true);
             int randomNumber = rand111.Next(50, 1000);
-            randomNumber = (int)Math.Round((randomNumber * Def.raidSeverityMultiplier));
+            randomNumber = (int)Math.Round((randomNumber * 1.0f));
             //Log.Message("points = " + randomNumber, true);
             IncidentParms ind222 = new IncidentParms();
             //Log.Message("line 2", true);

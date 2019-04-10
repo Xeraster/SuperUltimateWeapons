@@ -18,6 +18,11 @@ namespace UltimateWeaponsMod
         public HediffDef HediffToAdd = HediffDefOf.Plague;
     }
 
+    public class Thingdef_StunBullet : ThingDef
+    {
+        public float DeathChance = 0.01f;
+    }
+
     public class Thingdef_SafetyBullet : ThingDef
     {
         public float OP_ness = 0.95f; //The degree of how op this is
@@ -30,6 +35,11 @@ namespace UltimateWeaponsMod
         public float raidSeverityMultiplier = 1.00f; //base multiplier to be applied when calculating a random.
     }
 
+    public class Thingdef_TrumpRocket : ThingDef
+    {
+        public int wallVariable = 1; //this literally doesn't do anything. I just put it there in case I decide to use it for something later
+    }
+
     public class Thingdef_HouseBullet : ThingDef
     {
         public float buildingWealthMultiplier = 1.00f; //base multiplier to be applied when calculating a random.
@@ -39,6 +49,12 @@ namespace UltimateWeaponsMod
     {
         public float AddHediffChance = 0.95f; //The default chance of adding a hediff.
         public HediffDef HediffToAdd = HediffDefOf.Plague;
+    }
+
+    public class Thingdef_SkillBullet : ThingDef
+    {
+        //public float AddHediffChance = 0.95f; //The default chance of adding a hediff.
+        //public HediffDef HediffToAdd = HediffDefOf.Plague;
     }
 
     public class Thingdef_CatBullet : ThingDef
@@ -72,6 +88,14 @@ namespace UltimateWeaponsMod
     }
 
     public class Thingdef_EverythingRocket : ThingDef
+    {
+        public string damageDef = "Bomb";
+        public int damageAmountBase = 15;
+        public float explosionRadius = 2.9f;
+        public int speed = 50;
+    }
+
+    public class Thingdef_CatSwarm : ThingDef
     {
         public string damageDef = "Bomb";
         public int damageAmountBase = 15;

@@ -64,6 +64,7 @@ namespace UltimateWeaponsMod
             IntVec3 positionWhatever = new IntVec3(this.Position.x, this.Position.y, this.Position.z);
             GenSpawn.Spawn(theThingToSpawn, positionWhatever, this.launcher.Map);
             BuildingSpawner.SpawnBuilding(this.launcher.Map, ThingDefOf.Steel, positionWhatever, true, 0);
+            //this.launcher.Map.roofGrid.SetRoof(positionWhatever, RoofDefOf.RoofConstructed);
             #endregion Overrides
         }
     }

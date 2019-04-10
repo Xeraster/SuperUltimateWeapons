@@ -63,6 +63,10 @@
     <Compile Include="BuildingSpawner.cs" />
     <Compile Include="Projectile_SuperNukeBullet.cs" />
     <Compile Include="Projectile_SafetyBullet.cs" />
+    <Compile Include="Projectile_StunBullet.cs" />
+    <Compile Include="Projectile_TrumpRocket.cs" />
+    <Compile Include="Projectile_SkillBullet.cs" />
+    <Compile Include="Projectile_CatSwarm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
