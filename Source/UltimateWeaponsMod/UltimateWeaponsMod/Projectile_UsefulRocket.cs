@@ -124,16 +124,21 @@ namespace UltimateWeaponsMod
                             Log.Message("Found an item to change to spawn amount of. It's " + thingyWhateverFoo.label + " and the spawn amount will be " + (numThingsToSpawn + qtyMult), true);
                         }
 
-                        for (int b = 0; b < numThingsToSpawn * qtyMult; b++)
+                        if (!MiscCrap.IsBuilingHere(this.launcher.Map, positionWhatever))
                         {
-                            //Log.Message("r2Int = " + r2Int, true);
-                            if (thingyWhateverFoo.MadeFromStuff)
+                            for (int b = 0; b < numThingsToSpawn * qtyMult; b++)
                             {
-                                GenSpawn.Spawn(thingThatsAboutToBeSpawned, positionWhatever, hitThing.Map);
-                            }
-                            else
-                            {
-                                GenSpawn.Spawn(thingyWhateverFoo, positionWhatever, hitThing.Map);
+                                //Log.Message("r2Int = " + r2Int, true);
+
+                                //don't spawn over a building. This causes it to deconstruct once you save and reload
+                                if (thingyWhateverFoo.MadeFromStuff)
+                                {
+                                    GenSpawn.Spawn(thingThatsAboutToBeSpawned, positionWhatever, hitThing.Map);
+                                }
+                                else
+                                {
+                                    GenSpawn.Spawn(thingyWhateverFoo, positionWhatever, hitThing.Map);
+                                }
                             }
                         }
                     }

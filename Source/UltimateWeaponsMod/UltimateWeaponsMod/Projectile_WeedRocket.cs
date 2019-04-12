@@ -45,10 +45,13 @@ namespace UltimateWeaponsMod
                     for (int i = -3; i < 3; i++)
                     {
                         IntVec3 positionWhatever = new IntVec3(hitThing.Position.x + i, hitThing.Position.y, hitThing.Position.z + g);
-                        int beersToMake = Math.Abs(Math.Abs(g) - 3) + Math.Abs(Math.Abs(i) - 3);
-                        for (int b = 0; b < beersToMake; b++)
+                        if (!MiscCrap.IsBuilingHere(this.launcher.Map, positionWhatever))
                         {
-                            GenSpawn.Spawn(ThingDefOf.SmokeleafJoint, positionWhatever, hitThing.Map);
+                            int beersToMake = Math.Abs(Math.Abs(g) - 3) + Math.Abs(Math.Abs(i) - 3);
+                            for (int b = 0; b < beersToMake; b++)
+                            {
+                                GenSpawn.Spawn(ThingDefOf.SmokeleafJoint, positionWhatever, hitThing.Map);
+                            }
                         }
                     }
                 }
@@ -65,10 +68,13 @@ namespace UltimateWeaponsMod
                     for (int i = -3; i < 3; i++)
                     {
                         IntVec3 positionWhatever = new IntVec3(this.Position.x + i, this.Position.y, this.Position.z + g);
-                        int beersToMake = Math.Abs(Math.Abs(g) - 3) + Math.Abs(Math.Abs(i) - 3);
-                        for (int b = 0; b < beersToMake; b++)
+                        if (!MiscCrap.IsBuilingHere(this.launcher.Map, positionWhatever))
                         {
-                            GenSpawn.Spawn(ThingDefOf.SmokeleafJoint, positionWhatever, this.launcher.Map);
+                            int beersToMake = Math.Abs(Math.Abs(g) - 3) + Math.Abs(Math.Abs(i) - 3);
+                            for (int b = 0; b < beersToMake; b++)
+                            {
+                                GenSpawn.Spawn(ThingDefOf.SmokeleafJoint, positionWhatever, this.launcher.Map);
+                            }
                         }
                     }
                 }

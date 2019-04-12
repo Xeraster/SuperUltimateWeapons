@@ -44,18 +44,22 @@ namespace UltimateWeaponsMod
 
                 //int hitPosX = hitThing.Position.x;
                 //int hitPosY = hitThing.Position.y;
-                for (int g = -3; g < 3; g++)
-                {
-                    for (int i = -3; i < 3; i++)
+                    for (int g = -3; g < 3; g++)
                     {
-                        IntVec3 positionWhatever = new IntVec3(base.Position.x + i, base.Position.y, base.Position.z + g);
-                        int beersToMake = Math.Abs(Math.Abs(g) - 3) + Math.Abs(Math.Abs(i) - 3);
-                        for (int b = 0; b < beersToMake; b++)
+                        for (int i = -3; i < 3; i++)
                         {
-                            GenSpawn.Spawn(ThingDefOf.Beer, positionWhatever, hitThing.Map);
+                        IntVec3 positionWhatever = new IntVec3(base.Position.x + i, base.Position.y, base.Position.z + g);
+                        if (!MiscCrap.IsBuilingHere(this.launcher.Map, positionWhatever))
+                        {
+
+                            int beersToMake = Math.Abs(Math.Abs(g) - 3) + Math.Abs(Math.Abs(i) - 3);
+                            for (int b = 0; b < beersToMake; b++)
+                            {
+                                GenSpawn.Spawn(ThingDefOf.Beer, positionWhatever, hitThing.Map);
+                            }
+                        }
                         }
                     }
-                }
                 Log.Warning("exited for loop. About to run destroy", true);
                 this.Destroy();
             }
@@ -72,10 +76,13 @@ namespace UltimateWeaponsMod
                     for (int i = -3; i < 3; i++)
                     {
                         IntVec3 positionWhatever = new IntVec3(base.Position.x + i, base.Position.y, base.Position.z + g);
-                        int beersToMake = Math.Abs(Math.Abs(g) - 3) + Math.Abs(Math.Abs(i) - 3);
-                        for (int b = 0; b < beersToMake; b++)
+                        if (!MiscCrap.IsBuilingHere(this.launcher.Map, positionWhatever))
                         {
-                            GenSpawn.Spawn(ThingDefOf.Beer, positionWhatever, this.launcher.Map);
+                            int beersToMake = Math.Abs(Math.Abs(g) - 3) + Math.Abs(Math.Abs(i) - 3);
+                            for (int b = 0; b < beersToMake; b++)
+                            {
+                                GenSpawn.Spawn(ThingDefOf.Beer, positionWhatever, this.launcher.Map);
+                            }
                         }
                     }
                 }
