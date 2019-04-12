@@ -69,6 +69,8 @@
     <Compile Include="Projectile_CatSwarm.cs" />
     <Compile Include="Projectile_TameBullet.cs" />
     <Compile Include="Projectile_KillBullet.cs" />
+    <Compile Include="Projectile_BadCatSwarm.cs" />
+    <Compile Include="Projectile_UsefulRocket.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

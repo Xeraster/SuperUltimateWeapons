@@ -60,8 +60,7 @@ namespace UltimateWeaponsMod
             IncidentDef indicent1 = (!ind222.faction.HostileTo(Faction.OfPlayer)) ? IncidentDefOf.RaidFriendly : IncidentDefOf.RaidEnemy;
             indicent1.baseChance = 1.0f;
             indicent1.Worker.TryExecute(ind222);
-            //Log.Message("done", true);
-            //well that was a pain in the ass.
+            //well.. that was a pain in the ass.
             //}
         }
         #endregion Overrides

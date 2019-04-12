@@ -76,7 +76,7 @@ namespace UltimateWeaponsMod
     public class Thingdef_BeerRocket : ThingDef
     {
         public string damageDef = "Bomb";
-        public int damageAmountBase = 15;
+        public int damageAmountBase = 0;
         public float explosionRadius = 2.9f;
         public int speed = 50;
     }
@@ -103,6 +103,20 @@ namespace UltimateWeaponsMod
         public int damageAmountBase = 15;
         public float explosionRadius = 2.9f;
         public int speed = 50;
+
+        //these are the 2 that actually do something
+        public bool limitItemValue = true;//whether or not to put a limit on the max monetary value per item that can be spawned
+        public int maxValueLimit = 2000;/*The max value an item can be and still be allowed to be spawned. I had to impose a tunable limit
+        because otherwise, the gun spawns a bunch of orbital bombardment remotes, AI cores and Super Nukes making the base value go
+        up to a gazillion on the first shot. This causes the raids to get ridiculous*/
+        //body parts and the joywire are immune to this limit
+
+        public bool limitQtyBodyParts = true;
+    }
+
+    public class Thingdef_UsefulRocket : ThingDef
+    {
+        public int damageAmountBase = 15;
     }
 
     public class Thingdef_CatSwarm : ThingDef
@@ -113,9 +127,20 @@ namespace UltimateWeaponsMod
         public int speed = 50;
     }
 
+    public class Thingdef_BadCatSwarm : ThingDef
+    {
+        public string damageDef = "Bomb";
+        public int damageAmountBase = 15;
+        public float explosionRadius = 2.9f;
+        public int speed = 50;
+    }
+
     public class Thingdef_SuperNukeBullet : ThingDef
     {
-
+        public float explodeClusterSize = 12.0f;//the size of each clustered explosion blast
+        public int totalRadius = 50;//the total spawn radius of the cluster blasts. 50 is enough to destroy half the map
+        public int clusterFrequency = 982;//how dense to spawn cluster blasts. Lower numbers = more clusters 1000 will spawn no explosions. 0 will spawn an explosion on every block within the area of effect (lag)
+        public int damageToDo = 100000;
     }
 
 }

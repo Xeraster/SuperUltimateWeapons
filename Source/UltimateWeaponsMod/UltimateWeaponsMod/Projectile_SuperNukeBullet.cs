@@ -20,45 +20,60 @@ namespace UltimateWeaponsMod
         protected override void Impact(Thing hitThing)
         {
             base.Impact(hitThing);
+            Map thisMap = this.launcher.Map;
+            int sizex = thisMap.Size.x;
+            int sizey = thisMap.Size.y;
+            int sizez = thisMap.Size.z;
 
-            /*
-             * Null checking is very important in RimWorld.
-             * 99% of errors reported are from NullReferenceExceptions (NREs).
-             * Make sure your code checks if things actually exist, before they
-             * try to use the code that belongs to said things.
-             */
-            // if (Def != null && hitThing != null && hitThing is Pawn hitPawn) //Fancy way to declare a variable inside an if statement. - Thanks Erdelf.
-            //{
-            var rand = Rand.Value; // This is a random percentage between 0% and 100%
-                                   //Log.Message("In the Projectile_RaidBullet code body", true);
-                                   //DebugOutputsIncidents.RaidArrivemodeSampled();
-                                   //DebugOutputsIncidents.RaidFactionSampled();
-                                   //DebugOutputsIncidents.RaidStrategySampled();
-            Random rand111 = new Random();
-            //Log.Message("line 1", true);
-            int randomNumber = rand111.Next(50, 1000);
-            randomNumber = (int)Math.Round((randomNumber * 1.0f));
-            //Log.Message("points = " + randomNumber, true);
-            IncidentParms ind222 = new IncidentParms();
-            //Log.Message("line 2", true);
-            ind222.points = randomNumber;
-            ind222.raidArrivalMode = PawnsArrivalModeDefOf.EdgeWalkIn;
-            //Log.Message("line 3", true);
-            ind222.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
-            //Log.Message("line 4", true);
-            ind222.faction = Find.FactionManager.RandomEnemyFaction();
-            ind222.pawnGroupMakerSeed = 122;
-            //Log.Message("line 5", true);
-            ind222.target = hitThing.Map;
-            //Log.Message("this map to string = " + hitThing.Map.ToString(), true);
-            //Log.Message("line 6", true);
-            //IncidentDef indicent1 = IncidentDefOf.RaidEnemy;
-            //Log.Message("line 7", true);
-            //ind222.ExposeData();
-            ind222.forced = true;
-            IncidentDef indicent1 = (!ind222.faction.HostileTo(Faction.OfPlayer)) ? IncidentDefOf.RaidFriendly : IncidentDefOf.RaidEnemy;
-            indicent1.baseChance = 1.0f;
-            indicent1.Worker.TryExecute(ind222);
+            float explosionRadius = Def.explodeClusterSize;
+            int totalRadius = Def.totalRadius;
+            int clusterFrequency = Def.clusterFrequency;
+            int damageToDo = Def.damageToDo;
+
+            IntVec3 explodePosition;
+            if (hitThing != null)
+            {
+                explodePosition = new IntVec3(hitThing.Position.x, hitThing.Position.y, hitThing.Position.z); 
+            }
+            else
+            {
+                explodePosition = new IntVec3(base.Position.x, this.launcher.Position.y, base.launcher.Position.z);
+            }
+
+            Random rnd = new Random();
+            int randomChance = rnd.Next(0, 1000);
+            for (int x = (explodePosition.x - totalRadius); x < (explodePosition.x + totalRadius); x++)
+            {
+                for (int z = (explodePosition.z - totalRadius); z < (explodePosition.z + totalRadius); z++)
+                {
+                    if (z > 0 && z < sizez && x > 0 && x < sizex)
+                    {
+                        if (randomChance > clusterFrequency)
+                        {
+
+                            GenExplosion.DoExplosion(new IntVec3(x, this.launcher.Position.y, z), this.launcher.Map, explosionRadius, DamageDefOf.Bomb, this, damageToDo, damageToDo);
+                            GenClamor.DoClamor(this, explosionRadius, ClamorDefOf.Impact);
+                        }
+
+                        if (randomChance < 120)
+                        {
+                            //GenSpawn.Spawn(ThingDefOf.Fire, new IntVec3(x, this.launcher.Position.y, z), thisMap);
+                            Fire fireToStart = (Fire)ThingMaker.MakeThing(ThingDefOf.Fire);
+                            fireToStart.fireSize = Fire.MaxFireSize;
+                            GenSpawn.Spawn(fireToStart, new IntVec3(x, this.launcher.Position.y, z), thisMap);
+                        }
+                        if (randomChance > 120 && randomChance < 130)
+                        {
+                            GenSpawn.Spawn(ThingDefOf.Filth_Dirt, new IntVec3(x, this.launcher.Position.y, z), thisMap);
+                        }
+                        if (randomChance > 130 && randomChance < 260)
+                        {
+                            GenSpawn.Spawn(ThingDefOf.Filth_Ash, new IntVec3(x, this.launcher.Position.y, z), thisMap);
+                        }
+                    }
+                    randomChance = rnd.Next(0, 1000);
+                }
+            }
             //Log.Message("done", true);
             //well that was a pain in the ass.
             //}
