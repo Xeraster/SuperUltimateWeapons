@@ -619,6 +619,142 @@
   </ThingDef>
 
   <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>UW_Gun_CloneGun</defName>
+    <label>Clone Gun</label>
+    <description>A gun that clones whatever pawn it hits. If it doesn't hit a pawn, it will create a new one.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/cloneGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <statBases>
+      <MarketValue>850</MarketValue>
+      <WorkToMake>400</WorkToMake>
+      <Mass>1.4</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>Revolver</li>
+    </weaponTags>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Plasteel>2</Plasteel>
+      <Silver>4</Silver>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>1</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>UW_Bullet_CloneBullet</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>25.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>UW_Gun_GunGun</defName>
+    <label>Gun Gun</label>
+    <description>Never have to buy or make guns ever again! This is a gun that shoots guns everywhere. Any questions?
+
+      Pro-tip: modify the xml file of this mod located at "*modsfolder*/SuperUltimateWeapons/Defs/ThingDefs/" to get this gun working to your liking!</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/gunGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <statBases>
+      <MarketValue>350</MarketValue>
+      <WorkToMake>400</WorkToMake>
+      <Mass>1.4</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>Revolver</li>
+    </weaponTags>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Plasteel>2</Plasteel>
+      <Silver>4</Silver>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>1</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_GunRocket</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>25.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_StunGun</defName>
     <label>Stun Gun</label>
     <description>A gun that stuns whatever living thing it hits. It stuns the target without being fatal (usually).</description>
@@ -1419,7 +1555,7 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_BeerRocket</defaultProjectile>
+        <defaultProjectile>UW_Bullet_BeerGun</defaultProjectile>
         <warmupTime>0.2</warmupTime>
         <range>45.9</range>
         <soundCast>Shot_Revolver</soundCast>
@@ -1727,34 +1863,54 @@
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
     <projectile>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>0</damageAmountBase>
       <explosionRadius>2.9</explosionRadius>
       <speed>50</speed>
-      <limitItemValue>true</limitItemValue>
-      <maxValueLimit>2000</maxValueLimit>
-      <limitQtyBodyParts>true</limitQtyBodyParts>
     </projectile>
+    <limitItemValue>true</limitItemValue>
+    <maxValueLimit>2000</maxValueLimit><!-- test comment -->
+    <limitQtyBodyParts>true</limitQtyBodyParts>
     <thingClass>UltimateWeaponsMod.Projectile_EverythingRocket</thingClass>
   </ThingDef>
 
-  <ThingDef Class="UltimateWeaponsMod.Thingdef_UsefulRocket" ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet">
     <defName>Bullet_UsefulRocket</defName>
+    <label>large bottle</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/gunRocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <explosionRadius>2.9</explosionRadius>
+      <speed>50</speed>
+    </projectile>
+    <thingClass>UltimateWeaponsMod.Projectile_UsefulRocket</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="UltimateWeaponsMod.Thingdef_GunRocket" ParentName="BaseBullet">
+    <defName>Bullet_GunRocket</defName>
     <label>large bottle</label>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/animalRocket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
     <projectile>
-      <speed>55</speed>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>0</damageAmountBase>
+      <explosionRadius>2.9</explosionRadius>
+      <speed>50</speed>
     </projectile>
-    <thingClass>UltimateWeaponsMod.Projectile_UsefulRocket</thingClass>
+    <limitGunValue>0</limitGunValue><!-- 0 for no limit. Integers only -->
+    <effectRadius>3</effectRadius><!-- radius of effect. Must be an non-negative integer -->
+    <excludeOpGuns>false</excludeOpGuns><!-- Whether or not to exclude the guns in this mod -->
+    <spawnFewMelee>true</spawnFewMelee><!-- Setting this to true will cause it to spawn in a few melee weapons also (but still not very often)-->
+    <thingClass>UltimateWeaponsMod.Projectile_GunRocket</thingClass>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -1765,7 +1921,6 @@
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
     <projectile>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>0</damageAmountBase>
@@ -1773,9 +1928,9 @@
       <speed>50</speed>
     </projectile>
     <thingClass>UltimateWeaponsMod.Projectile_CatSwarm</thingClass>
-  </ThingDef>
+</ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
+  <ThingDef Class="UltimateWeaponsMod.Thingdef_BadCatSwarm" ParentName="BaseBullet">
     <defName>UW_Bullet_BadCatSwarm</defName>
     <label>cat swarm</label>
     <graphicData>
@@ -1783,7 +1938,6 @@
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
     <projectile>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>0</damageAmountBase>
@@ -1791,17 +1945,16 @@
       <speed>50</speed>
     </projectile>
     <thingClass>UltimateWeaponsMod.Projectile_BadCatSwarm</thingClass>
-  </ThingDef>
+</ThingDef>
 
-<ThingDef ParentName="BaseBullet">
-    <defName>Bullet_BeerRocket</defName>
+<ThingDef Class="UltimateWeaponsMod.Thingdef_BeerRocket" ParentName="BaseBullet">
+    <defName>UW_Bullet_BeerGun</defName>
     <label>large bottle</label>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/beerRocket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
     <projectile>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>0</damageAmountBase>
@@ -1809,7 +1962,7 @@
       <speed>50</speed>
     </projectile>
     <thingClass>UltimateWeaponsMod.Projectile_BeerRocket</thingClass>
-  </ThingDef>
+</ThingDef>
 
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_WeedRocket</defName>
@@ -1819,7 +1972,6 @@
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
     <projectile>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>0</damageAmountBase>
@@ -1837,7 +1989,6 @@
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
     <projectile>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>0</damageAmountBase>
@@ -1917,6 +2068,23 @@
     <AddHediffChance>0.95</AddHediffChance>
 	<HediffToAdd>Plague</HediffToAdd>
 	<thingClass>UltimateWeaponsMod.Projectile_HealthBullet</thingClass>
+  </ThingDef>
+
+  <ThingDef Class="UltimateWeaponsMod.Thingdef_CloneBullet" ParentName="BaseBullet">
+    <defName>UW_Bullet_CloneBullet</defName>
+    <label>clone bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+    <onlySpawnHumanlike>false</onlySpawnHumanlike>
+  <thingClass>UltimateWeaponsMod.Projectile_CloneBullet</thingClass>
   </ThingDef>
 
   <ThingDef Class="UltimateWeaponsMod.Thingdef_StunBullet" ParentName="BaseBullet">
@@ -2056,7 +2224,6 @@
       <damageAmountBase>0</damageAmountBase>
       <speed>55</speed>
     </projectile>
-    <AddHediffChance>0.95</AddHediffChance>
   <buildingWealthMultiplier>1.0</buildingWealthMultiplier>
   <thingClass>UltimateWeaponsMod.Projectile_HouseBullet</thingClass>
   </ThingDef>

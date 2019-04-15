@@ -119,6 +119,20 @@ namespace UltimateWeaponsMod
         public int damageAmountBase = 15;
     }
 
+    public class Thingdef_CloneBullet : ThingDef
+    {
+        public bool onlySpawnHumanlike = false;
+    }
+
+    public class Thingdef_GunRocket : ThingDef
+    {
+         
+        public int limitGunValue = 0;//the gun market value limit to allow to be spawned. 0 for no limit
+        public int effectRadius = 5;
+        public bool excludeOpGuns = false;//whether or not to exclude the guns in this mod
+        public bool spawnFewMelee = true;//whether or not to throw in a few random melee weapons
+    }
+
     public class Thingdef_CatSwarm : ThingDef
     {
         public string damageDef = "Bomb";

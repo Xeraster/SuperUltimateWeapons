@@ -7,15 +7,15 @@ using Verse;
 
 namespace UltimateWeaponsMod
 {
-    class Projectile_UsefulRocket : Bullet
+    class Projectile_GunRocket : Bullet
     {
         #region Properties
         //
-        public Thingdef_UsefulRocket Def
+        public Thingdef_GunRocket Def
         {
             get
             {
-                return this.def as Thingdef_UsefulRocket;
+                return this.def as Thingdef_GunRocket;
             }
         }
         #endregion Properties
@@ -24,6 +24,12 @@ namespace UltimateWeaponsMod
         {
             base.Impact(hitThing);
 
+            Log.Message("about to attemp to load the def variables..", true);
+            int limitGunValue = Def.limitGunValue;
+            int effectRadius = Def.effectRadius;
+            bool excludeOpGuns = Def.excludeOpGuns;
+            bool spawnFewMelee = Def.spawnFewMelee;
+            Log.Message("If you are reading this, the def variables sucessfully got read and loaded", true);
             int itemDefArraySize = DefDatabase<ThingDef>.DefCount;
             Log.Message("the number of item defs in the thing def database is: " + itemDefArraySize, true);
             Log.Message("About to sort through " + itemDefArraySize + " things in DefDatabase<ThingDef>.All", true);
@@ -31,42 +37,32 @@ namespace UltimateWeaponsMod
             int thingsCount = 0;
             foreach (ThingDef currentThing in DefDatabase<ThingDef>.AllDefs)
             {
-                if (currentThing.IsWithinCategory(ThingCategoryDefOf.Drugs) || currentThing.IsWithinCategory(ThingCategoryDefOf.FoodMeals)
-                    || currentThing.IsWithinCategory(ThingCategoryDefOf.Foods) || currentThing.IsWithinCategory(ThingCategoryDefOf.Leathers)
-                || currentThing.IsWithinCategory(ThingCategoryDefOf.Manufactured) || currentThing.IsWithinCategory(ThingCategoryDefOf.MeatRaw)
-                    || currentThing.IsWithinCategory(ThingCategoryDefOf.Medicine) || currentThing.IsWithinCategory(ThingCategoryDefOf.PlantFoodRaw)
-                || currentThing.IsWithinCategory(ThingCategoryDefOf.ResourcesRaw) || currentThing.IsWithinCategory(ThingCategoryDefOf.StoneBlocks)
-                    || currentThing.IsWithinCategory(ThingCategoryDefOf.StoneChunks))
+                if (currentThing.IsWithinCategory(ThingCategoryDefOf.Weapons))
                 {
                     //Log.Message("- " + currentThing.label, true);
                     /*I don't understand lists, have never used them in a real world scenario to accomplish anything meaningful so I
                      really hope that this doesn't cause a zillion null exceptions in Rimworld*/
-                    if (!currentThing.label.Contains("Unfinished") && !currentThing.label.Contains("persona") && !currentThing.label.Contains("doomsday")
-                    && !currentThing.label.Contains("unfinished") && !currentThing.label.Contains("Psychic") && !currentThing.label.Contains("subpersona"))
+                    if (!currentThing.label.Contains("Unfinished") && !currentThing.label.Contains("uranium") && !currentThing.label.Contains("unfinished") && !currentThing.label.Contains("Psychic") && !currentThing.label.Contains("subpersona") && !currentThing.label.Contains("turret"))
                     {
-                                listOfThings.Add(currentThing);
-                                thingsCount++;
-                                //Log.Message("- " + currentThing.label, true);
- 
+                        if (limitGunValue == 0 || currentThing.BaseMarketValue < limitGunValue)
+                        {
+                            listOfThings.Add(currentThing);
+                            thingsCount++;
+                        }
+                        //Log.Message("- " + currentThing.label, true);
+
                     }
                 }
             }
 
             //strangely, there are some items NOT contained in the thing def database. My list only excludes buildings and some other pointless junk
             //I can add the excluded things in manually. Most of them are in the already decalred in the ThingDefOf class
-            listOfThings.Add(ThingDefOf.Steel); thingsCount++;
-            listOfThings.Add(ThingDefOf.BlocksGranite); thingsCount++;
-            listOfThings.Add(ThingDefOf.Gold); thingsCount++;
-            listOfThings.Add(ThingDefOf.Silver); thingsCount++;
-            listOfThings.Add(ThingDefOf.Uranium); thingsCount++;
-            listOfThings.Add(ThingDefOf.Plasteel); thingsCount++;
-            listOfThings.Add(ThingDefOf.ChunkSlagSteel); thingsCount++;
 
             //Log.Message("Done. wrote " + thingsCount + " things to a bigass list", true);
 
 
             //ok on to the other shit
-            if (hitThing != null || this.launcher.Map != null) //Fancy way to declare a variable inside an if statement. - Thanks Erdelf.
+            if (hitThing != null || base.Position != null) //Fancy way to declare a variable inside an if statement. - Thanks Erdelf.
             {
                 //Log.Warning("hitThing = " + hitThing.ToString(), true);
                 var rand = Rand.Value; // This is a random percentage between 0% and 100%
@@ -78,9 +74,9 @@ namespace UltimateWeaponsMod
                 int hitPosZ;// = hitThing.Position.z;
                 if (hitThing == null)
                 {
-                    hitPosX = this.launcher.Position.x;
-                    hitPosY = this.launcher.Position.y;
-                    hitPosZ = this.launcher.Position.z;
+                    hitPosX = base.Position.x;
+                    hitPosY = base.Position.y;
+                    hitPosZ = base.Position.z;
                 }
                 else
                 {
@@ -89,20 +85,34 @@ namespace UltimateWeaponsMod
                     hitPosZ = hitThing.Position.z;
                 }
                 //Log.Message("about to spawn a zillion items in for loop 1", true);
-                for (int g = -5; g < 5; g++)
+                for (int g = -effectRadius; g < effectRadius; g++)
                 {
-                    for (int i = -5; i < 5; i++)
+                    for (int i = -effectRadius; i < effectRadius; i++)
                     {
                         //Random r2 = new Random();
                         //int r2Int = r2.Next(0, 34);
                         IntVec3 positionWhatever = new IntVec3(hitPosX + i, hitPosY, hitPosZ + g);
                         ThingDef thingyWhateverFoo = listOfThings.RandomElement<ThingDef>();
                         Thing thingThatsAboutToBeSpawned;
-                        int numThingsToSpawn;
+                        int numThingsToSpawn = 1;
 
-                        //this is meant to combat the issue of there being too many body parts spawning everywhere
-                        //It's only so funny for so long, you know ?
-                        //I left it possible for the user to toggle this feature on and off via the xml file
+                        if (!thingyWhateverFoo.IsRangedWeapon)
+                        {
+                            //bool meleeOK;
+                            if (new Random().Next(0, 1000) < 50 && spawnFewMelee == true)
+                            {
+                                //cool. do nothing then
+                            }
+                            else
+                            {
+                                //bool foundRanged = false;
+                                while (!thingyWhateverFoo.IsRangedWeapon)
+                                {
+                                    thingyWhateverFoo = listOfThings.RandomElement<ThingDef>();
+                                }
+                            }
+                        }
+
                         if (thingyWhateverFoo.MadeFromStuff)
                         {
                             thingThatsAboutToBeSpawned = ThingMaker.MakeThing(thingyWhateverFoo, ThingDefOf.Steel);
@@ -111,18 +121,10 @@ namespace UltimateWeaponsMod
                         else
                         {
                             thingThatsAboutToBeSpawned = ThingMaker.MakeThing(thingyWhateverFoo);
-                            numThingsToSpawn = Math.Abs(Math.Abs(g) - 5) + Math.Abs(Math.Abs(i) - 5);
+                            //numThingsToSpawn = Math.Abs(Math.Abs(g) - 5) + Math.Abs(Math.Abs(i) - 5);
+                            numThingsToSpawn = 1;
                         }
                         int qtyMult = 1;
-                        if (thingyWhateverFoo.IsWithinCategory(ThingCategoryDefOf.Leathers) || thingyWhateverFoo.IsWithinCategory(ThingCategoryDefOf.Foods)
-                        || thingyWhateverFoo.IsWithinCategory(ThingCategoryDefOf.Drugs) || thingyWhateverFoo.IsWithinCategory(ThingCategoryDefOf.ResourcesRaw)
-                            || thingyWhateverFoo.IsWithinCategory(ThingCategoryDefOf.PlantMatter) || thingyWhateverFoo == ThingDefOf.Steel
-                        || thingyWhateverFoo == ThingDefOf.Gold || thingyWhateverFoo == ThingDefOf.Silver || thingyWhateverFoo == ThingDefOf.Plasteel
-                            || thingyWhateverFoo == ThingDefOf.Uranium || thingyWhateverFoo == ThingDefOf.BlocksGranite)
-                        {
-                            qtyMult = new Random().Next(6, 20);
-                            Log.Message("Found an item to change to spawn amount of. It's " + thingyWhateverFoo.label + " and the spawn amount will be " + (numThingsToSpawn + qtyMult), true);
-                        }
 
                         if (!MiscCrap.IsBuilingHere(this.launcher.Map, positionWhatever))
                         {
@@ -133,11 +135,11 @@ namespace UltimateWeaponsMod
                                 //don't spawn over a building. This causes it to deconstruct once you save and reload
                                 if (thingyWhateverFoo.MadeFromStuff)
                                 {
-                                    GenSpawn.Spawn(thingThatsAboutToBeSpawned, positionWhatever, hitThing.Map);
+                                    GenSpawn.Spawn(thingThatsAboutToBeSpawned, positionWhatever, this.launcher.Map);
                                 }
                                 else
                                 {
-                                    GenSpawn.Spawn(thingyWhateverFoo, positionWhatever, hitThing.Map);
+                                    GenSpawn.Spawn(thingyWhateverFoo, positionWhatever, this.launcher.Map);
                                 }
                             }
                         }

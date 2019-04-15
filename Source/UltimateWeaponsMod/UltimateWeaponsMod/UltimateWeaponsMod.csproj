@@ -72,6 +72,8 @@
     <Compile Include="Projectile_BadCatSwarm.cs" />
     <Compile Include="Projectile_UsefulRocket.cs" />
     <Compile Include="MiscCrap.cs" />
+    <Compile Include="Projectile_GunRocket.cs" />
+    <Compile Include="Projectile_CloneBullet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
