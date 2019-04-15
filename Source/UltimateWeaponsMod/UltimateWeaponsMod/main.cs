@@ -124,6 +124,11 @@ namespace UltimateWeaponsMod
         public bool onlySpawnHumanlike = false;
     }
 
+    public class Thingdef_BaseSpawnBullet : ThingDef
+    {
+
+    }
+
     public class Thingdef_GunRocket : ThingDef
     {
          

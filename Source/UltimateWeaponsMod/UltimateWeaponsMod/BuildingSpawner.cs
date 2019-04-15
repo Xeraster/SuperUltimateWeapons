@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
@@ -58,14 +59,32 @@ namespace UltimateWeaponsMod
             GenSpawn.Spawn(theDoor, new IntVec3(baseLocation.x + sizeX, baseLocation.y, baseLocation.z + (sizeZ - 2)), whichMap);
 
             //spawn the floor
+            List<TerrainDef> listOfFloors = new List<TerrainDef>();
+            TerrainDef theFloor;
+            if (type == 3)
+            {
+                foreach (TerrainDef thingInQuestion in DefDatabase<TerrainDef>.AllDefs)
+                {
+                    if (thingInQuestion.IsCarpet)
+                    {
+                        Log.Message("item to add into list is:" + thingInQuestion.label, true);
+                        listOfFloors.Add(thingInQuestion);
+                    }
+                }
+                theFloor = listOfFloors.RandomElement<TerrainDef>();
+            }
+            else
+            {
+                theFloor = TerrainDefOf.Concrete;
+            }
             if (floorIt == true)
             {
                 for (int xx = -sizeX + 1; xx < sizeX; xx++)
                 {
                     for (int zz = -sizeZ + 1; zz < sizeZ; zz++)
                     {
-                        TerrainDef theFuckingFloor = TerrainDefOf.Concrete;
-                        whichMap.terrainGrid.SetTerrain(new IntVec3(baseLocation.x + xx, baseLocation.y, baseLocation.z + zz), theFuckingFloor);
+                        //TerrainDef theFuckingFloor = TerrainDefOf.Concrete;
+                        whichMap.terrainGrid.SetTerrain(new IntVec3(baseLocation.x + xx, baseLocation.y, baseLocation.z + zz), theFloor);
                         if (type != 6)
                         {
                             whichMap.roofGrid.SetRoof(new IntVec3(baseLocation.x + xx, baseLocation.y, baseLocation.z + zz), RoofDefOf.RoofConstructed);
@@ -75,7 +94,7 @@ namespace UltimateWeaponsMod
                 }
             }
 
-            if (type != 6)
+            if (type != 6 && type != 3)
             {
                 //spawn furniture if applicable. Do this for ALL room types
                 ThingDef ac = ThingDefOf.Cooler;
@@ -114,8 +133,7 @@ namespace UltimateWeaponsMod
                     ThingDef chair4;
                     chair4 = ThingDefOf.DiningChair;
                     Thing chairToSpawn4 = ThingMaker.MakeThing(chair4, ThingDefOf.WoodLog);
-                    //I can't fucking believe you have to do this 4 fucking times (one for each spawn instance). What kind of crack were the developers smoking
-                    //It's actually quite impressive actually. How the fuck can this anomoly be reproduced? How TF does the game know it's the same chair variable? (if I try to spawn the same chair 4 time)
+                    //not the best way to do it, but too late, I already did it
 
                     //for Rot4 variables, 0 = North. 1 = East. 2 = South. 3 = West
                     GenSpawn.Spawn(chairToSpawn, new IntVec3(baseLocation.x - sizeX + 3, baseLocation.y, baseLocation.z + sizeX - 2), whichMap, new Rot4(3));
@@ -127,8 +145,7 @@ namespace UltimateWeaponsMod
                     //the above code should spawn 4 chairs around the table wit heach chair facing the same direction
 
                     //now, let's spawn 3 or 4 beds
-                    //using a for loop as a workaround to the "you can't use the same variable twice" bullshit as seen above
-                    //I still want to know what kind of fucking crack the devs were on tho
+                    //using a for loop instead of doing what I did above again
 
                     for (int g = 0; g < 4; g++)
                     {
@@ -140,6 +157,27 @@ namespace UltimateWeaponsMod
                     }
                 }
 
+            }
+        }
+
+
+        /// <summary>
+        /// Spawns a building with bedrooms in it
+        /// </summary>
+        /// <param name="whichMap">args will be passed when starting this program</param>
+        /// <param name="stuff">what will the walls be made out of</param>
+        /// <param name="baseLocation">center location of where the building will spawn</param>
+        /// <param name="numRooms">how many bedrooms will the building have</param>
+        ///  <param name="floorIt">What's the first thing you do before you start the boat?</param>
+        public static void SpawnBedrooms(Map whichMap, ThingDef stuff, IntVec3 baseLocation, int numRooms, bool floorIt = false)
+        {
+            Log.Message("got into spawn bedrooms function", true);
+
+            for (int i = 0; i < numRooms; i++)
+            {
+                MakeWall(whichMap, stuff, new IntVec3(baseLocation.x, baseLocation.y, baseLocation.z + (i * 4)), 3, 2, true, 3);
+                Thing bed = ThingMaker.MakeThing(ThingDefOf.Bed, ThingDefOf.Steel);
+                GenSpawn.Spawn(bed, new IntVec3(baseLocation.x + 2, baseLocation.y, baseLocation.z + (i * 4) + 1), whichMap, new Rot4(3));
             }
         }
     }

@@ -1,17 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateWeaponsMod/Projectile_GunRocket.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateWeaponsMod/BuildingSpawner.cs">
     <Files>
-      <File FileName="UltimateWeaponsMod/main.cs" Line="124" Column="48" />
-      <File FileName="UltimateWeaponsMod/BuildingSpawner.cs" Line="6" Column="2" />
-      <File FileName="UltimateWeaponsMod/Projectile_UsefulRocket.cs" Line="174" Column="1" />
-      <File FileName="UltimateWeaponsMod/Projectile_EverythingRocket.cs" Line="18" Column="61" />
-      <File FileName="UltimateWeaponsMod/Projectile_HouseBullet.cs" Line="44" Column="25" />
-      <File FileName="UltimateWeaponsMod/Projectile_CloneBullet.cs" Line="89" Column="84" />
-      <File FileName="UltimateWeaponsMod/Projectile_CatBullet.cs" Line="9" Column="2" />
-      <File FileName="UltimateWeaponsMod/MiscCrap.cs" Line="181" Column="13" />
-      <File FileName="UltimateWeaponsMod/Projectile_SkillBullet.cs" Line="44" Column="121" />
-      <File FileName="UltimateWeaponsMod/Projectile_HealthBullet.cs" Line="45" Column="21" />
-      <File FileName="UltimateWeaponsMod/Projectile_GunRocket.cs" Line="45" Column="199" />
+      <File FileName="UltimateWeaponsMod/main.cs" Line="129" Column="9" />
+      <File FileName="UltimateWeaponsMod/BuildingSpawner.cs" Line="180" Column="67" />
+      <File FileName="UltimateWeaponsMod/MiscCrap.cs" Line="181" Column="1" />
+      <File FileName="UltimateWeaponsMod/Projectile_GunRocket.cs" Line="36" Column="28" />
+      <File FileName="UltimateWeaponsMod/Projectile_EverythingRocket.cs" Line="2" Column="1" />
+      <File FileName="UltimateWeaponsMod/Projectile_BaseSpawnGun.cs" Line="62" Column="15" />
+      <File FileName="UltimateWeaponsMod/Projectile_HouseBullet.cs" Line="41" Column="58" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
