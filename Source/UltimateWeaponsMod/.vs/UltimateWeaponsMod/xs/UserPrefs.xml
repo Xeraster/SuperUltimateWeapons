@@ -3,7 +3,7 @@
     <Files>
       <File FileName="UltimateWeaponsMod/main.cs" Line="129" Column="1" />
       <File FileName="UltimateWeaponsMod/MiscCrap.cs" Line="181" Column="1" />
-      <File FileName="UltimateWeaponsMod/BuildingSpawner.cs" Line="309" Column="84" />
+      <File FileName="UltimateWeaponsMod/BuildingSpawner.cs" Line="223" Column="22" />
       <File FileName="UltimateWeaponsMod/Projectile_BaseSpawnGun.cs" Line="56" Column="44" />
       <File FileName="UltimateWeaponsMod/Projectile_GunRocket.cs" Line="36" Column="28" />
       <File FileName="UltimateWeaponsMod/Projectile_EverythingRocket.cs" Line="2" Column="1" />

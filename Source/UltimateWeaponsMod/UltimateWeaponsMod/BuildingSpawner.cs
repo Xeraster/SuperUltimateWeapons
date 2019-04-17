@@ -33,6 +33,7 @@ namespace UltimateWeaponsMod
         /// <param name="type">0 = general purpose. 1 = freezer. 2 = prison. 3 = bedroom. 4 = workshop. 5 = hospital. 6 = nothing</param>
         public static void MakeWall(Map whichMap, ThingDef stuff, IntVec3 baseLocation, int sizeX, int sizeZ, bool floorIt = false, int type = 0, bool power = false)
         {
+            ClearObstacles(whichMap, baseLocation, sizeX, sizeZ);
 
             //This part spawns the walls
             for (int x = -sizeX; x < sizeX + 1; x++)
@@ -177,7 +178,7 @@ namespace UltimateWeaponsMod
 
         public static void SpawnAnEntireBase(Map whichMap, IntVec3 baseCenter)
         {
-            ClearObstacles(whichMap, new IntVec3(baseCenter.x - 5, baseCenter.y, baseCenter.z + 9), 8, 16);
+            //ClearObstacles(whichMap, new IntVec3(baseCenter.x - 5, baseCenter.y, baseCenter.z + 9), 8, 16);
             SpawnBedrooms(whichMap, ThingDefOf.Steel, baseCenter, 4, true);
             SpawnBedrooms(whichMap, ThingDefOf.Steel, new IntVec3(baseCenter.x - 6, baseCenter.y, baseCenter.z + 8), 2, true, true);
 
@@ -188,6 +189,36 @@ namespace UltimateWeaponsMod
             SpawnRecRoom(whichMap, ThingDefOf.Steel, new IntVec3(baseCenter.x + 12, baseCenter.y, baseCenter.z + 11), 3, 6);
 
             SpawnWorkshop(whichMap, ThingDefOf.Steel, new IntVec3(baseCenter.x - 19, baseCenter.y, baseCenter.z + 18), 4, 5);
+
+            //now, connect all the buildings together with power cords
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 19, baseCenter.y, baseCenter.z + 18 - 5), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 19, baseCenter.y, baseCenter.z + 18 - 6), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 19, baseCenter.y, baseCenter.z + 18 - 7), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 19, baseCenter.y, baseCenter.z + 18 - 8), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 19, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 15, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 14, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 13, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 12, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 11, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x - 10, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 4, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 5, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 6, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 7, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 8, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 15, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 16, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 17, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 18, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 19, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 20, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+            GenSpawn.Spawn(ThingDefOf.PowerConduit, new IntVec3(baseCenter.x + 21, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
+
+            GenSpawn.Spawn(ThingDefOf.GeothermalGenerator, new IntVec3(baseCenter.x + 23, baseCenter.y, baseCenter.z + 18 - 9), whichMap);
         }
         /// <summary>
         /// Spawns a building with bedrooms in it
@@ -316,11 +347,27 @@ namespace UltimateWeaponsMod
         public static void SpawnWorkshop(Map whichMap, ThingDef stuff, IntVec3 position, int sizeX, int sizeZ)
         {
             MakeWall(whichMap, stuff, position, sizeX, sizeZ, true, 3, true);
+            GenSpawn.Spawn(ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("ElectricTailoringBench"), ThingDefOf.WoodLog), new IntVec3(position.x - sizeX + 2, position.y, position.z - sizeZ  + 1), whichMap, new Rot4(2));
+            GenSpawn.Spawn(ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("TableMachining")), new IntVec3(position.x - sizeX + 6, position.y, position.z - sizeZ + 1), whichMap, new Rot4(2));
+            GenSpawn.Spawn(ThingDefOf.StandingLamp, new IntVec3(position.x, position.y, position.z), whichMap);
+            GenSpawn.Spawn(ThingDefOf.Heater, new IntVec3(position.x - sizeX + 4, position.y, position.z - sizeZ + 1), whichMap);
+            GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.DiningChair, ThingDefOf.WoodLog), new IntVec3(position.x - sizeX + 2, position.y, position.z - sizeZ + 2), whichMap, new Rot4(2));
+            GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.DiningChair, ThingDefOf.WoodLog), new IntVec3(position.x - sizeX + 6, position.y, position.z - sizeZ + 2), whichMap, new Rot4(2));
+
+            GenSpawn.Spawn(ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("TableStonecutter"), ThingDefOf.WoodLog), new IntVec3(position.x - sizeX + 1, position.y, position.z - sizeZ + 3), whichMap, new Rot4(1));
+            GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.DiningChair, ThingDefOf.WoodLog), new IntVec3(position.x - sizeX + 2, position.y, position.z - sizeZ + 3), whichMap, new Rot4(3));
+
+            GenSpawn.Spawn(ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("HiTechResearchBench"), ThingDefOf.Steel), new IntVec3(position.x - sizeX + 1, position.y, position.z - sizeZ + 7), whichMap, new Rot4(1));
+            GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.DiningChair, ThingDefOf.WoodLog), new IntVec3(position.x - sizeX + 3, position.y, position.z - sizeZ + 7), whichMap, new Rot4(3));
+
+            GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.Cooler), new IntVec3(position.x - sizeX + 3, position.y, position.z + sizeZ), whichMap, new Rot4(0));
         }
 
         public static void SpawnStorageRoom(Map whichMap, ThingDef stuff, IntVec3 baseLocation, bool floorIt = false, int type = 0, bool power = false)
         {
             MakeWall(whichMap, stuff, baseLocation, 5, 5, true, type, power);
+            GenSpawn.Spawn(ThingMaker.MakeThing(DefDatabase<ThingDef>.GetNamed("TableButcher"), ThingDefOf.WoodLog), new IntVec3(baseLocation.x - 3, baseLocation.y, baseLocation.z - 4), whichMap, new Rot4(2));
+            GenSpawn.Spawn(ThingDefOf.StandingLamp, new IntVec3(baseLocation.x, baseLocation.y, baseLocation.z), whichMap);
         }
     }
 
