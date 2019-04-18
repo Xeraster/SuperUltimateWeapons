@@ -1408,6 +1408,7 @@
     </tradeTags>
     <verbs>
       <li>
+        <forcedMissRadius>1.1</forcedMissRadius>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_Rocket</defaultProjectile>
@@ -1480,6 +1481,7 @@
     </tradeTags>
     <verbs>
       <li>
+        <forcedMissRadius>0.1</forcedMissRadius>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_LargeRocket</defaultProjectile>
@@ -2217,8 +2219,6 @@
       <damageAmountBase>0</damageAmountBase>
       <speed>55</speed>
     </projectile>
-    <AddHediffChance>0.95</AddHediffChance>
-  <HediffToAdd>Plague</HediffToAdd>
   <thingClass>UltimateWeaponsMod.Projectile_GlobalBullet</thingClass>
   </ThingDef>
 

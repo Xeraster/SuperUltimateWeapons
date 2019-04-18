@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--==Column 1==-->
+		<!--========================================-->
+	
+			<ResearchProjectDef>
+				
+				<defName>Basic_UltimateWeapons</defName>
+				<label>Basic Ultimate Weapons</label>
+				
+				<tab>UltimateWeapons</tab> 
+				<!-- For Organization. For a vanilla research tab this will allow you to seperate 
+				The vanilla research to the modded research	-->
+				
+				<techLevel>Industrial</techLevel>
+				
+				<description>Build some of the basic, quality of life enhancing guns from this mod that aren't all that crazy but still pretty useful.</description>
+				
+				<baseCost>1000</baseCost>
+				
+				
+				<requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding>
+					
+					<!--===  For Vanilla Research Tab ===-->
+					
+					<researchViewX>1</researchViewX> <!-- The Smaller the More Left -->
+					<researchViewY>1</researchViewY> <!-- The Smaller the More  Up  -->
+					
+			</ResearchProjectDef>
+			
+<!--==Column 2==-->			
+		<!--========================================-->
+	
+			<ResearchProjectDef>
+				
+				<defName>Advanced_UltimateWeapons</defName>
+				<label>Advanced Ultimate Weapons</label>
+				
+				<tab>UltimateWeapons</tab> 
+				<!-- For Organization. For a vanilla research tab this will allow you to seperate 
+				The vanilla research to the modded research	-->
+				
+				<techLevel>Industrial</techLevel>
+				
+				<description>Build some of the more advanced and crazier weapons from this mod. These include some that you have to be careful with.</description>
+				
+				<baseCost>1500</baseCost>
+				
+				<prerequisites>
+				<li>Basic_UltimateWeapons</li>
+				</prerequisites>
+				
+				<requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding>
+					
+					<!--===  For Vanilla Research Tab ===-->
+					
+					<researchViewX>2</researchViewX> <!-- The Smaller the More Left -->
+					<researchViewY>1</researchViewY> <!-- The Smaller the More  Up  -->
+					
+			</ResearchProjectDef>
+  
+		<!--========================================-->
+	
+			<ResearchProjectDef>
+				
+				<defName>Superb_UltimateWeapons</defName>
+				<label>WTF</label>
+				
+				<tab>UltimateWeapons</tab> 
+				<!-- For Organization. For a vanilla research tab this will allow you to seperate 
+				The vanilla research to the modded research	-->
+				
+				<techLevel>Spacer</techLevel>
+				
+				<description>Build the craziest weapons in this mod. This category includes the super nuke and the Global Disaster gun, capable of destroying the entire planet.</description>
+				
+				<baseCost>3000</baseCost>
+				
+				<prerequisites>
+				<li>ChargedShot</li>
+				<li>Advanced_UltimateWeapons</li>
+				</prerequisites>
+				
+				<requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding>
+				
+					
+					<!--===  For Vanilla Research Tab ===-->
+					
+					<researchViewX>3</researchViewX> <!-- The Smaller the More Left -->
+					<researchViewY>1</researchViewY> <!-- The Smaller the More  Up  -->
+					
+			</ResearchProjectDef>
+  
+		<!--========================================-->
+
+  </Defs>
