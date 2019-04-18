@@ -33,22 +33,22 @@ namespace UltimateWeaponsMod
              */
             if (Def != null && hitThing != null && hitThing is Pawn hitPawn) //Fancy way to declare a variable inside an if statement. - Thanks Erdelf.
             {
-                    /*
-                     * Messages.Message flashes a message on the top of the screen. 
-                     * You may be familiar with this one when a colonist dies, because
-                     * it makes a negative sound and mentioneds "So and so has died of _____".
-                     * 
-                     * Here, we're using the "Translate" function. More on that later in
-                     * the localization section.
-                     */
+                /*
+                 * Messages.Message flashes a message on the top of the screen. 
+                 * You may be familiar with this one when a colonist dies, because
+                 * it makes a negative sound and mentioneds "So and so has died of _____".
+                 * 
+                 * Here, we're using the "Translate" function. More on that later in
+                 * the localization section.
+                 */
 
-                    Log.Message("this is before the headiff command", true);
-                    Log.Message(hitPawn.health.summaryHealth.ToString(), true);
-                    int numHediffs = 0;
-                    int numGoodHediffs = 0;
+                Log.Message("this is before the headiff command", true);
+                Log.Message(hitPawn.health.summaryHealth.ToString(), true);
+                int numHediffs = 0;
+                int numGoodHediffs = 0;
 
-                    foreach (Hediff hediff in hitPawn.health.hediffSet.hediffs)
-                    {
+                foreach (Hediff hediff in hitPawn.health.hediffSet.hediffs)
+                {
                     Hediff localH = hediff;
                     if (hediff.Label.Contains("bionic") || hediff.Label.Contains("clone") || hediff.Label.Contains("joywire"))
                     {
@@ -63,7 +63,7 @@ namespace UltimateWeaponsMod
                         numHediffs++;
                     }
                     //numHediffs++;
-                    }
+                }
 
                 Hediff[] hediffArray = new Hediff[numGoodHediffs];
                 Log.Message("found " + numHediffs + "undesirable headiffs", true);

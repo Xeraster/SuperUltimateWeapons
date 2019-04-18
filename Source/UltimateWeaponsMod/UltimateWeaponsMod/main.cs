@@ -129,6 +129,11 @@ namespace UltimateWeaponsMod
 
     }
 
+    public class Thingdef_GlobalBullet : ThingDef
+    {
+
+    }
+
     public class Thingdef_GunRocket : ThingDef
     {
          

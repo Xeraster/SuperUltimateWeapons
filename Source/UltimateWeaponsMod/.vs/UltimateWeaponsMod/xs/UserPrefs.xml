@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateWeaponsMod/BuildingSpawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateWeaponsMod/Projectile_GlobalBullet.cs">
     <Files>
-      <File FileName="UltimateWeaponsMod/main.cs" Line="129" Column="1" />
-      <File FileName="UltimateWeaponsMod/MiscCrap.cs" Line="181" Column="1" />
-      <File FileName="UltimateWeaponsMod/BuildingSpawner.cs" Line="223" Column="22" />
-      <File FileName="UltimateWeaponsMod/Projectile_BaseSpawnGun.cs" Line="56" Column="44" />
-      <File FileName="UltimateWeaponsMod/Projectile_GunRocket.cs" Line="36" Column="28" />
+      <File FileName="UltimateWeaponsMod/main.cs" Line="131" Column="5" />
       <File FileName="UltimateWeaponsMod/Projectile_EverythingRocket.cs" Line="2" Column="1" />
+      <File FileName="UltimateWeaponsMod/Projectile_GlobalBullet.cs" Line="31" Column="60" />
+      <File FileName="UltimateWeaponsMod/Projectile_SuperNukeBullet.cs" Line="20" Column="55" />
+      <File FileName="UltimateWeaponsMod/Projectile_HealthBullet.cs" Line="10" Column="43" />
+      <File FileName="UltimateWeaponsMod/Projectile_TestBullet.cs" Line="41" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

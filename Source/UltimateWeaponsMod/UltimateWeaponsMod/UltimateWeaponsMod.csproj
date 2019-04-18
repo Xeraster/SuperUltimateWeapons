@@ -75,6 +75,7 @@
     <Compile Include="Projectile_GunRocket.cs" />
     <Compile Include="Projectile_CloneBullet.cs" />
     <Compile Include="Projectile_BaseSpawnGun.cs" />
+    <Compile Include="Projectile_GlobalBullet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
