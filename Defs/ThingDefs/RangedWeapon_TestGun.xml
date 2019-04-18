@@ -21,7 +21,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>TST_Gun_TestGun</defName>
     <label>Fart Gun</label>
-    <description>A gun that does no damage but forces the victim on the recieving end to let out a loud and smelly fart. This embarrases the victim because everyone in the room will hear and smell it!</description>
+    <description>A gun that does no damage but forces the victim on the recieving end to let out a loud and smelly fart. Everyone in the room will hear and smell it!</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/FartGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -45,6 +45,7 @@
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -84,15 +85,15 @@
 
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_rapidAfGun</defName>
-    <label>The Super Pistol</label>
-    <description>A multi-barrel pistol with an extremely high rate of fire. While it is a very deadly weapon, it does have several drawbacks. It fires in uncontrollable 15-round bursts. It's also not very accurate due to it's unwieldly weight and size.</description>
+    <label>Super Pistol</label>
+    <description>A multi-barrel pistol with an extremely high rate of fire. While it is a very deadly weapon, it does have several drawbacks. It fires in uncontrollable 15-round bursts. So make sure that you're ok with whatever you're shooting at not surviving.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/rapidAfGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Autopistol</soundInteract>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -152,14 +153,14 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_raidGun</defName>
     <label>Raid Gun</label>
-    <description>Need a raid? This gun causes raids with a random amount of points.</description>
+    <description>Need a raid? This gun causes raids with a random amount of points. Will it be a big raid? A small raid? Who knows!</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/raidGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Autopistol</soundInteract>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -218,14 +219,14 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_houseGun</defName>
     <label>House Gun</label>
-    <description>Need a house? This gun spawns random buildings for you.</description>
+    <description>Need a house? This gun spawns random buildings for you. Spawn them to add to your base, take it on a camping trip or shoot it at unsuspecting raiders.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/houseGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Autopistol</soundInteract>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -290,7 +291,7 @@
       Is a particularly annoying pawn having an episode for the zillionth time? Turn that sucker into a cat! Cats NEVER go on insulting sprees. They are also ok with eating without a table.
       Is there an army of boomalopes that could blow up an entire continent? Turn them into an army of cats!
       Merchants ripping you off again? Oh well, I guess you'll just have to turn them all into cats.
-      Is there a forest of trees in the way? How about you make it into a forest of cats?
+      Is an army of mechanoids about to kill you? Why not turn them into an army of cats?
 
       The cat gun is indubidubly the best gun for every situation imaginable. If you haven't already armed every single one of your pawns with one, YOU ARE AN IDIOT!</description>
     <graphicData>
@@ -317,6 +318,7 @@
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -358,7 +360,7 @@
     <defName>UW_Gun_CatSwarmGun</defName>
     <label>Cat Swarm Gun</label>
     <description>Is the Cat Gun just not making enough cats for you? Well, with the Cat Swarm Gun, that's no longer a problem!
-      I'm sure you can guess what it does just by reading the name...</description>
+I'm sure you can guess what it does just by reading the name.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/catSwarmGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -383,6 +385,7 @@
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -423,7 +426,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_BadCatSwarmGun</defName>
     <label>Bad Cat Swarm Gun</label>
-    <description>A BAZILLION BERZERK CATS!! WTF!!!</description>
+    <description>Is the cat swarm gun too bording? Do you need to spice up your cat situation? Well this gun spawns A BAZILLION BERZERK CATS!! WTF!!!</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/badCatSwarmGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -448,6 +451,7 @@
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -487,7 +491,7 @@
 
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_HealthGun</defName>
-    <label>The Health Gun</label>
+    <label>Health Gun</label>
     <description>A gun that GIVES you health instead of take it away.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/HealthGun</texPath>
@@ -514,6 +518,7 @@
       <Silver>4</Silver>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -554,7 +559,8 @@
     <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_GlobalGun</defName>
     <label>Global Disaster Gun</label>
-    <description>Don't use this gun. It will destroy the entire world and everyone in it.</description>
+    <description>Don't use this gun. 
+This firearm, while small in size, fires a Super Extreme Uber Insane Edition 10000000000000 Yotta Ton Nuke. It will destroy the entire world and everyone in it with one single shot.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/globalGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -581,6 +587,7 @@
       <Silver>4</Silver>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Superb_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -648,6 +655,7 @@
       <Silver>4</Silver>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -715,6 +723,7 @@
       <Silver>4</Silver>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -755,7 +764,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_BaseSpawnGun</defName>
     <label>Base Spawning Gun</label>
-    <description>A gun that spawns an entire base!</description>
+    <description>A gun that spawns an entire base! Take it on a camping trip or fire it at unsuspecting raiders.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/basespawnGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -782,6 +791,7 @@
       <Silver>4</Silver>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -851,6 +861,7 @@
       <Silver>4</Silver>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -916,6 +927,7 @@
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -955,7 +967,7 @@
 
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_KillGun</defName>
-    <label>kill gun</label>
+    <label>Kill Gun</label>
     <description>A gun that unconditionally kills any living thing it hits.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/killGun</texPath>
@@ -981,6 +993,7 @@
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -1023,7 +1036,7 @@
     <label>Tame Gun</label>
     <description>A gun that unconditionally tames any living thing it hits.
 
-    	Use this to instantly recruit any pawn or instantly tame any animal. It also tames everythig inside of a 3 block radius, so don't go crazy with it!</description>
+    	Use this to instantly recruit any pawn or instantly tame any animal. It also tames everything inside of a 3 block radius, so don't go crazy with it!</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/tameGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -1048,6 +1061,7 @@
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -1087,12 +1101,12 @@
 
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_SafetyPistol</defName>
-    <label>The Safety Pistol</label>
+    <label>Safety Pistol</label>
     <description>Do you have an idiot pawn that keeps going on mental breaks and shooting the place up? Do you get raided so often you can't afford to not give this same idiot pawn a gun? Well you might be interested in the safety pistol.
-      The Safety Pistol, like other firearms will deal damage to any enemy that it hits.
-      Unlike a regular firearm, however, it is incapable of inflicting damage via friendly fire. In fact, if you try to shoot a friendly, it won't hurt them. Try it!
+The Safety Pistol, like other firearms will deal damage to any enemy that it hits.
+Unlike a regular firearm, however, it is incapable of inflicting damage via friendly fire. In fact, if you try to shoot a friendly, it won't hurt them. Try it!
 
-      This deals 10 points of damage or so making it equivalent to the autopistol.</description>
+This deals 10 points of damage or so making it equivalent to the autopistol.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/safetyPistol</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -1115,6 +1129,7 @@
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1156,14 +1171,14 @@
 
    <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_SafetyGun</defName>
-    <label>The Safety Gun</label>
+    <label>Safety Gun</label>
     <description>A gun that heals friendlies but kills enemies. It's like the safety pistol but better. Does 10 damage.
 
-      Pro-tip: Is a colonist on a mental break? Shoot them! A single shot at a colonist will end their mental break!
-      Shooting a friendly, non-mentally broken colonist will cure all of their flesh wounds! (i.e. will not remove joywires, bionic limbs and a few other things you wouldn't normally want removed)
-      Shooting a friendly, non-mentally broken colonist that is in good health will give them a +5 positive mood buff.
+Pro-tip: Is a colonist on a mental break? Shoot them! A single shot at a colonist will end their mental break!
+Shooting a friendly, non-mentally broken colonist will cure all of their flesh wounds! (i.e. will not remove joywires, bionic limbs and a few other things you wouldn't normally want removed)
+Shooting a friendly, non-mentally broken colonist that is in good health will give them a +5 positive mood buff.
 
-      Shooting at anything other than a friendly colonist will function like a regular gun though. So don't shoot at things you don't want dead such as cats, trees, caravans (etc).</description>
+Shooting at anything other than a friendly colonist will function like a regular gun though. So don't shoot at things you don't want dead such as cats, trees, caravans (etc).</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/safetyGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -1188,7 +1203,7 @@
       <Silver>4</Silver>
     </costList>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1230,13 +1245,13 @@
 
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_Gun_MentalHealthGun</defName>
-    <label>The Mental Health Gun</label>
+    <label>Mental Health Gun</label>
     <description>A gun that allows the user to change the victim's, err, I mean target's mental state.
-      Useful for making even the most wimpy colonists work for you all day long even if their favorite show is on or nobody's letting them eat their tasteless glop at a table.
+Useful for making even the most wimpy winy colonists work for you all day long even if their favorite show is on or nobody's letting them eat their tasteless glop at a table.
 
-      For maximum effectiveness: assign a "slave driver" pawn who just carries one of these around all day shooting at the idiots that go berserk.
+For maximum effectiveness: assign a "slave driver" pawn who just carries one of these around all day shooting at the idiots that go berserk.
 
-      It doubles as a weapon, too. Any human that gets hit that isn't having a mental episode will instantly have a mental break! That makes this gun an effective weapon in combat against unsuspecting raiders.</description>
+It doubles as a weapon, too. Any human that gets hit that isn't having a mental episode will instantly have a mental break! That makes this gun an effective weapon in combat against unsuspecting raiders.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/MentalHealthGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -1262,6 +1277,7 @@
       <Silver>4</Silver>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -1304,7 +1320,7 @@
     <label>Skill Gun</label>
     <description>Tired of having a bunch of incompetent pawns just running amuk left and right? This gun will fix you right up! It increases random skills and replaces worthless or bad traits. If you need more skill points, just keep shooting until satisfied.
 
-    It will only work on your own colonists. You wouldn't want to take this into battle and accidently increase some random tribeperson's cooking by 3, now, would you..</description>
+It will only work on your own colonists. You wouldn't want to take this into battle and accidently increase some random tribeperson's cooking by 3, now, would you..</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/skillGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -1330,6 +1346,7 @@
       <Plasteel>15</Plasteel>
     </costList>
     <recipeMaker>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -1371,7 +1388,7 @@
     <defName>UW_MachinegunRocketLauncher</defName>
     <label>Machinegun Rocket Launcher</label>
     <description>A reloadable rocket launcher capable of unleashing a lot of rockets at once.
-      Be very careful with this.</description>
+Be very careful with this.</description>
     <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/machineRocketLauncher</texPath>
@@ -1379,7 +1396,7 @@
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1452,7 +1469,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1522,7 +1539,7 @@
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Superb_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1592,7 +1609,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1660,7 +1677,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1728,7 +1745,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Basic_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1796,7 +1813,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1864,7 +1881,7 @@
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1925,7 +1942,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>UW_EverythingLauncher</defName>
     <label>Everything Launcher</label>
-    <description>This gun shoots everything. Literally. Also, it's kind of damgerous but no one listens to me when I say that so knock yourself out.</description>
+    <description>This gun shoots everything. Literally. Also, it's kind of dangerous but no one listens to me when I say that so knock yourself out.</description>
     <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/everythingLauncher</texPath>
@@ -1933,7 +1950,7 @@
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
     <recipeMaker>
-      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <researchPrerequisite>Advanced_UltimateWeapons</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -1993,7 +2010,7 @@
 
   <ThingDef Class="UltimateWeaponsMod.Thingdef_EverythingRocket" ParentName="BaseBullet">
     <defName>Bullet_EverythingRocket</defName>
-    <label>large bottle</label>
+    <label>idk man</label>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/animalRocket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -2013,7 +2030,7 @@
 
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_UsefulRocket</defName>
-    <label>large bottle</label>
+    <label>bullet</label>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/gunRocket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -2030,9 +2047,9 @@
 
   <ThingDef Class="UltimateWeaponsMod.Thingdef_GunRocket" ParentName="BaseBullet">
     <defName>Bullet_GunRocket</defName>
-    <label>large bottle</label>
+    <label>bullet</label>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/animalRocket</texPath>
+      <texPath>Things/Item/Equipment/WeaponRanged/gunRocket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
@@ -2190,7 +2207,7 @@
 
   <ThingDef Class="UltimateWeaponsMod.Thingdef_HealthBullet" ParentName="BaseBullet">
     <defName>UW_Bullet_HealthGun</defName>
-    <label>Health Charge</label>
+    <label>health charge</label>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -2241,9 +2258,9 @@
 
   <ThingDef Class="UltimateWeaponsMod.Thingdef_BaseSpawnBullet" ParentName="BaseBullet">
     <defName>UW_Bullet_BaseSpawnBullet</defName>
-    <label>clone bullet</label>
+    <label>base spawning bullet</label>
     <graphicData>
-      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <texPath>Things/Item/Equipment/WeaponRanged/yeetRocket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -2383,7 +2400,7 @@
     <defName>UW_Bullet_HouseBullet</defName>
     <label>Subsonic House</label>
     <graphicData>
-      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <texPath>Things/Item/Equipment/WeaponRanged/yeetRocket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>

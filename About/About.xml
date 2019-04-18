@@ -1,7 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Ultimate Weapons Mod</name>
+	<name>Ultimate Ridiculous Weapons Mod</name>
 	<author>Xeraster</author>
 	<targetVersion>1.0</targetVersion>
-	<description>This mod adds a bunch of ridiculous weapons to the game.</description>
+	<description>Have you ever wanted to turn an annoying colonist into a cat? What about an army of intelligent muffalos? What about fight off hoards of raiders by shooting beer or houses at them?
+This is the Ultimate Ridiculous Weapons mod. This mod adds 29 crazy new guns to the game. Here is a short description of each one:
+
+Cat Gun - Turns whatever living thing it hits into a cat
+
+Cat Swarm Gun - Spawns a crowd of cats
+
+Bad Cat Swarm Gun - Spawns a bunch of manhunting cats.
+
+Clone Gun - Clones whatever living thing it hits. If it does not hit a living thing, it spawns a random pawn.
+
+House Gun - Spawns a simple house
+
+Base Spawning Gun - Spawns an entire base
+
+Gun Gun - Spawns random guns everywhere
+
+Stun Gun - Stuns whatever it hits while doing no damage.
+
+Kill Gun - Instantly kills whatever it hits in one shot.
+
+Useful Gun - Spawns a bunch of useful resources everywhere. Like the everything launcher but it doesn't just spawn a ton of annoying crap you'll never use everywhere and cause lots of clutter.
+
+Tame Gun - Tames whatever wild animal it hits and instantly recruits any non-player faction pawn it hits.
+
+Safety Pistol - A gun that only harms enemy and animal pawns. If it hits a friendly pawn, it heals them. If it hits a friendly pawn that is in a mental break, it ends the mental break. This gun is perfect for giving to pawns that go on mental breaks often.
+
+Safety Gun - A rifle version of the safety pistol with a higher rate of fire.
+
+Health Gun - This gun instantly and completely heals whatever it hits.
+
+Mental Health Gun - Never have to put up with winy wimpy colonists again! This gun causes whatever it hits to end their mental break if they are in a mental state. If the target is not in a mental state when hit, it makes them go on a random mental break. For maximum effectiveness: assign a "slave driver" pawn who just carries one of these around all day shooting at the idiots that go berserk.
+
+Skill Gun - Tired of having a bunch of incompetent pawns just running amuk left and right? This gun will fix you right up! It increases random skills and replaces worthless or bad traits. If you need more skill points, just keep shooting until satisfied.
+It will only work on your own colonists. You wouldn't want to take this into battle and accidently increase some random tribeperson's cooking by 3, now, would you?
+
+Machinegun Rocket Launcher - Rapidly fires rockets.
+
+Large Rocket Launcher - Fires a single rocket which causes a large explosion.
+
+Massive Rocket Launcher - Fires a single rocket which causes a very large explosion.
+
+Beer Launcher - A rocket launcher that causes beer to spawn everywhere.
+
+Weed Launcher - A rocket launcher thatt spawns smokeleaf everywhere.
+
+Trump Gun - Firing this gun will build a wall around the map.
+
+Animal Party Launcher - Spawns a bunch of random animals - even animals that don't belong in the current biome. Wanna see monkeys in the north pole? This gun will make it happen!
+
+Everything Launcher - Spawns pretty much every item and pawn in the game.
+
+Fart Gun - This is one of the most diabolical weapons of them all. Shooting a pawn with this will force them to let out a loud, smelly and embarrasing fart.
+
+The RapidAF Gun - This is just a handgun that has an absurdly high rate of fire.
+
+Raid Gun - Need more victims to test all these guns on? Shooting the raid gun will cause a raid.
+
+and last but not least..
+Super Nuke Launcher - Fires a nuke. The explosion is so big it can wipe out nearly half the map. Be very careful with this.
+
+Global Disaster Gun - The most dangerous gun of all. This gun fires a Super Extreme Uber Insane Edition 10000000000000 Yotta Ton Nuke. This causes such a massive explosion that it destroys the entire planet and everything on it. Everyone will die.
+
+</description>
 </ModMetaData>

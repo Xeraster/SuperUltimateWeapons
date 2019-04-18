@@ -16,7 +16,7 @@
 				
 				<description>Build some of the basic, quality of life enhancing guns from this mod that aren't all that crazy but still pretty useful.</description>
 				
-				<baseCost>1000</baseCost>
+				<baseCost>500</baseCost>
 				
 				
 				<requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding>
@@ -44,7 +44,7 @@
 				
 				<description>Build some of the more advanced and crazier weapons from this mod. These include some that you have to be careful with.</description>
 				
-				<baseCost>1500</baseCost>
+				<baseCost>1000</baseCost>
 				
 				<prerequisites>
 				<li>Basic_UltimateWeapons</li>
