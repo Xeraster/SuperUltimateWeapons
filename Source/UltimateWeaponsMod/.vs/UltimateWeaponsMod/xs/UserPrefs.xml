@@ -1,7 +1,7 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="UltimateWeaponsMod/Projectile_GlobalBullet.cs">
     <Files>
-      <File FileName="UltimateWeaponsMod/main.cs" Line="131" Column="5" />
+      <File FileName="UltimateWeaponsMod/main.cs" Line="131" Column="1" />
       <File FileName="UltimateWeaponsMod/Projectile_EverythingRocket.cs" Line="2" Column="1" />
       <File FileName="UltimateWeaponsMod/Projectile_GlobalBullet.cs" Line="31" Column="60" />
       <File FileName="UltimateWeaponsMod/Projectile_SuperNukeBullet.cs" Line="20" Column="55" />

@@ -19,7 +19,7 @@
 				<baseCost>500</baseCost>
 				
 				
-				<requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding>
+				<!--requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding-->
 					
 					<!--===  For Vanilla Research Tab ===-->
 					
@@ -50,7 +50,7 @@
 				<li>Basic_UltimateWeapons</li>
 				</prerequisites>
 				
-				<requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding>
+				<!--requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding-->
 					
 					<!--===  For Vanilla Research Tab ===-->
 					
@@ -81,7 +81,7 @@
 				<li>Advanced_UltimateWeapons</li>
 				</prerequisites>
 				
-				<requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding>
+				<!--requiredResearchBuilding>SimpleResearchBench</requiredResearchBuilding-->
 				
 					
 					<!--===  For Vanilla Research Tab ===-->
